@@ -109,10 +109,10 @@ const CommandNavigation = () => {
     </nav>
 
     {/* Mobile Navigation */}
-    <div className="fixed top-6 right-6 z-50 lg:hidden">
+    <div className="fixed top-6 right-6 z-[100] lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <button className="bg-[#0B1120] text-white p-3 rounded-full shadow-lg hover:bg-[#0B1120]/90 transition-colors">
+          <button className="bg-[#0B1120] text-white p-3 rounded-full shadow-2xl hover:bg-[#0B1120]/90 transition-colors border border-white/20">
             <Menu className="w-6 h-6" />
           </button>
         </SheetTrigger>
