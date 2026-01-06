@@ -8,7 +8,10 @@ import {
   FileText,
   ShieldCheck,
   Globe,
-  ChevronRight
+  ChevronRight,
+  MessageSquare,
+  Home as HomeIcon,
+  HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,13 +61,14 @@ const FadeInText = ({ text, delay = 0, className = "" }: { text: string, delay?:
   );
 };
 
-const VerticalNavigation = () => {
+const CommandNavigation = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "services", "process", "transparency", "risk-control", "contact"];
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const sections = ["home", "services", "process", "transparency", "risk-control", "faqs", "contact"];
+      // Adjust offset to trigger earlier
+      const scrollPosition = window.scrollY + window.innerHeight * 0.4;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -83,42 +87,69 @@ const VerticalNavigation = () => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Home", icon: Globe },
+    { id: "home", label: "Home", icon: HomeIcon },
     { id: "services", label: "Services", icon: Anchor },
     { id: "process", label: "Process", icon: ChevronRight },
     { id: "transparency", label: "Transparency", icon: FileText },
-    { id: "risk-control", label: "Risk Control", icon: ShieldCheck },
-    { id: "contact", label: "Contact", icon: MapIcon },
+    { id: "risk-control", label: "Compliance", icon: ShieldCheck },
+    { id: "faqs", label: "FAQs", icon: HelpCircle },
   ];
 
   return (
-    <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-6">
-      {navItems.map((item) => (
-        <a
-          key={item.id}
-          href={`#${item.id}`}
-          className="group flex items-center justify-end gap-4 relative"
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          <span 
+    <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
+      {/* Top Items */}
+      <div className="flex flex-col w-full">
+        {navItems.map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+            }}
             className={`
-              text-sm font-bold uppercase tracking-widest transition-all duration-300
-              ${activeSection === item.id ? "opacity-100 translate-x-0 text-primary" : "opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 text-muted-foreground"}
+              group relative flex flex-col items-center justify-center py-5 w-full transition-all duration-300
+              ${activeSection === item.id ? "bg-white/5" : "hover:bg-white/5"}
             `}
           >
-            {item.label}
+            {/* Active Indicator Line */}
+            <div 
+              className={`
+                absolute left-0 top-0 bottom-0 w-1 bg-secondary transition-all duration-300
+                ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-50"}
+              `} 
+            />
+            
+            <item.icon 
+              className={`
+                w-6 h-6 mb-1.5 transition-colors duration-300
+                ${activeSection === item.id ? "text-white" : "text-white/70 group-hover:text-white"}
+              `} 
+            />
+            <span 
+              className={`
+                text-[10px] font-bold uppercase tracking-wider transition-colors duration-300
+                ${activeSection === item.id ? "text-white" : "text-white/70 group-hover:text-white"}
+              `}
+            >
+              {item.label}
+            </span>
+          </a>
+        ))}
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="w-full px-2">
+        <button
+          onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          className="w-full flex flex-col items-center justify-center bg-secondary hover:bg-secondary/90 text-primary py-4 rounded-sm transition-all duration-300 group shadow-lg"
+        >
+          <MessageSquare className="w-6 h-6 mb-1" />
+          <span className="text-[10px] font-bold uppercase tracking-wider text-center leading-tight">
+            Consult
           </span>
-          <div 
-            className={`
-              w-3 h-3 rounded-full transition-all duration-300 border-2
-              ${activeSection === item.id ? "bg-primary border-primary scale-125" : "bg-transparent border-muted-foreground group-hover:border-primary"}
-            `}
-          />
-        </a>
-      ))}
+        </button>
+      </div>
     </nav>
   );
 };
@@ -128,8 +159,8 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      <VerticalNavigation />
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden lg:pr-[88px]">
+      <CommandNavigation />
 
       {/* BRAND HEADER (Left) */}
       <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
