@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Rajdhani", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: "Lato", sans-serif;
+  --font-serif: "Playfair Display", serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -57,90 +57,91 @@
 }
 
 :root {
-  /* Default to dark mode values even in root for this specific design */
-  --background: #050505;
-  --foreground: #E0E0E0;
+  /* Cinematic Minimalism / Poetic Realism Palette */
+  --background: #F5F7FA; /* Misty White */
+  --foreground: #333333; /* Charcoal Grey */
   
-  --card: #0A0A0A;
-  --card-foreground: #E0E0E0;
+  --card: #FFFFFF;
+  --card-foreground: #333333;
   
-  --popover: #0A0A0A;
-  --popover-foreground: #E0E0E0;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
   
-  --primary: #00F0FF; /* Electric Teal */
-  --primary-foreground: #050505;
+  --primary: #1A3A5F; /* Deep Ocean Blue */
+  --primary-foreground: #FFFFFF;
   
-  --secondary: #FFD700; /* Warning Yellow */
-  --secondary-foreground: #050505;
+  --secondary: #D2B48C; /* Warm Sand */
+  --secondary-foreground: #1A3A5F;
   
-  --muted: #1A1A1A;
-  --muted-foreground: #888888;
+  --muted: #E6E9EF; /* Soft Fog Grey */
+  --muted-foreground: #6B7280;
   
-  --accent: #00F0FF;
-  --accent-foreground: #050505;
+  --accent: #D2B48C;
+  --accent-foreground: #1A3A5F;
   
-  --destructive: #FF003C; /* Cyberpunk Red */
-  --destructive-foreground: #E0E0E0;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
   
-  --border: #333333;
-  --input: #1A1A1A;
-  --ring: #00F0FF;
+  --border: #E5E7EB;
+  --input: #FFFFFF;
+  --ring: #1A3A5F;
   
-  --radius: 0rem; /* Brutalist - no rounded corners */
+  --radius: 0.5rem;
   
-  --chart-1: #00F0FF;
-  --chart-2: #FFD700;
-  --chart-3: #FF003C;
-  --chart-4: #888888;
-  --chart-5: #333333;
+  --chart-1: #1A3A5F;
+  --chart-2: #D2B48C;
+  --chart-3: #6B7280;
+  --chart-4: #9CA3AF;
+  --chart-5: #E5E7EB;
   
-  --sidebar: #050505;
-  --sidebar-foreground: #E0E0E0;
-  --sidebar-primary: #00F0FF;
-  --sidebar-primary-foreground: #050505;
-  --sidebar-accent: #1A1A1A;
-  --sidebar-accent-foreground: #00F0FF;
-  --sidebar-border: #333333;
-  --sidebar-ring: #00F0FF;
+  --sidebar: #F5F7FA;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #1A3A5F;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6E9EF;
+  --sidebar-accent-foreground: #1A3A5F;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #1A3A5F;
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #E0E0E0;
+  /* Dark mode is not the primary focus, but keeping it consistent with the new palette */
+  --background: #1A1A1A;
+  --foreground: #F5F7FA;
   
-  --card: #0A0A0A;
-  --card-foreground: #E0E0E0;
+  --card: #262626;
+  --card-foreground: #F5F7FA;
   
-  --popover: #0A0A0A;
-  --popover-foreground: #E0E0E0;
+  --popover: #262626;
+  --popover-foreground: #F5F7FA;
   
-  --primary: #00F0FF;
-  --primary-foreground: #050505;
+  --primary: #D2B48C; /* Warm Sand becomes primary in dark mode */
+  --primary-foreground: #1A3A5F;
   
-  --secondary: #FFD700;
-  --secondary-foreground: #050505;
+  --secondary: #1A3A5F;
+  --secondary-foreground: #FFFFFF;
   
-  --muted: #1A1A1A;
-  --muted-foreground: #888888;
+  --muted: #333333;
+  --muted-foreground: #9CA3AF;
   
-  --accent: #1A1A1A;
-  --accent-foreground: #00F0FF;
+  --accent: #333333;
+  --accent-foreground: #D2B48C;
   
-  --destructive: #FF003C;
-  --destructive-foreground: #E0E0E0;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
   
-  --border: #333333;
-  --input: #1A1A1A;
-  --ring: #00F0FF;
+  --border: #404040;
+  --input: #262626;
+  --ring: #D2B48C;
   
-  --sidebar: #050505;
-  --sidebar-foreground: #E0E0E0;
-  --sidebar-primary: #00F0FF;
-  --sidebar-primary-foreground: #050505;
-  --sidebar-accent: #1A1A1A;
-  --sidebar-accent-foreground: #00F0FF;
-  --sidebar-border: #333333;
-  --sidebar-ring: #00F0FF;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F5F7FA;
+  --sidebar-primary: #D2B48C;
+  --sidebar-primary-foreground: #1A3A5F;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #D2B48C;
+  --sidebar-border: #404040;
+  --sidebar-ring: #D2B48C;
 }
 
 @layer base {
@@ -148,10 +149,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-primary-foreground;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-secondary/30 selection:text-primary;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-mono uppercase tracking-tight;
+    @apply font-serif tracking-tight;
   }
 }
 
@@ -160,8 +161,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .flex {
@@ -171,58 +172,62 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1400px; /* Wider container for command center feel */
+      padding-left: 4rem;
+      padding-right: 4rem;
+      max-width: 1200px; /* More intimate container width */
     }
   }
   
-  /* Custom Utilities for Cyber-Industrial Look */
-  .cyber-grid {
-    background-image: 
-      linear-gradient(to right, rgba(51, 51, 51, 0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(51, 51, 51, 0.3) 1px, transparent 1px);
-    background-size: 40px 40px;
+  /* Custom Utilities for Poetic Look */
+  .grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
   
-  .cyber-border {
-    @apply border border-primary/30 relative;
+  .text-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0;
   }
   
-  .cyber-border::before {
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .soft-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .soft-underline::after {
     content: '';
     position: absolute;
-    top: -1px;
-    left: -1px;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid var(--primary);
-    border-left: 2px solid var(--primary);
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
   }
   
-  .cyber-border::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    right: -1px;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid var(--primary);
-    border-right: 2px solid var(--primary);
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-  }
-  
-  .box-glow {
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  .soft-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
