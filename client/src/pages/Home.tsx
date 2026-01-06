@@ -83,7 +83,7 @@ export default function Home() {
             alt="Global trade network" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" style={{width: '1727px'}} />
         </motion.div>
 
         <div className="container relative z-10">
