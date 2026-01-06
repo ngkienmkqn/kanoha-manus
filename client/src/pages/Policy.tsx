@@ -44,7 +44,7 @@ export default function Policy() {
 
           <h3>7. Contact Us</h3>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at contact@kanoha.com.
+            If you have any questions about this Privacy Policy, please contact us at kanohalimited@gmail.com.
           </p>
         </div>
       </div>
