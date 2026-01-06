@@ -8,8 +8,11 @@ import {
   ChevronRight, 
   MessageSquare,
   FileText,
-  Users
+  Users,
+  Menu,
+  X
 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const CommandNavigation = () => {
   const [location] = useLocation();
@@ -50,8 +53,10 @@ const CommandNavigation = () => {
   ];
 
   return (
-    <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
-      <div className="flex flex-col w-full">
+    <>
+      {/* Desktop Navigation */}
+      <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
+        <div className="flex flex-col w-full">
         {navItems.map((item) => {
           const isActive = location === item.path || (location === "/" && activeSection === item.id && item.path.startsWith("/#"));
           
@@ -102,6 +107,51 @@ const CommandNavigation = () => {
         </Link>
       </div>
     </nav>
+
+    {/* Mobile Navigation */}
+    <div className="fixed top-6 right-6 z-50 lg:hidden">
+      <Sheet>
+        <SheetTrigger asChild>
+          <button className="bg-[#0B1120] text-white p-3 rounded-full shadow-lg hover:bg-[#0B1120]/90 transition-colors">
+            <Menu className="w-6 h-6" />
+          </button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-[300px] bg-[#0B1120] border-l border-white/10 p-0">
+          <div className="flex flex-col h-full py-8">
+            <div className="px-6 mb-8">
+              <span className="font-serif text-2xl font-bold text-white tracking-tighter">KANOHA</span>
+            </div>
+            
+            <div className="flex-1 flex flex-col">
+              {navItems.map((item) => {
+                const isActive = location === item.path;
+                return (
+                  <Link key={item.id} href={item.path}>
+                    <a className={`
+                      flex items-center gap-4 px-6 py-4 transition-colors
+                      ${isActive ? "bg-white/10 text-white" : "text-white/70 hover:bg-white/5 hover:text-white"}
+                    `}>
+                      <item.icon className="w-5 h-5" />
+                      <span className="font-bold uppercase tracking-wider text-sm">{item.label}</span>
+                    </a>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="px-6 mt-auto">
+              <Link href="/contact">
+                <button className="w-full flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/90 text-primary py-4 rounded-sm transition-all duration-300 font-bold uppercase tracking-wider text-sm">
+                  <MessageSquare className="w-5 h-5" />
+                  Consult Now
+                </button>
+              </Link>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
+    </>
   );
 };
 
