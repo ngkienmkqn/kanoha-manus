@@ -107,7 +107,7 @@ const CommandNavigation = () => {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden lg:pr-[88px]">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <CommandNavigation />
       
       {/* BRAND HEADER */}

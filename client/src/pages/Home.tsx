@@ -60,7 +60,7 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden lg:pr-[88px]">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
 
 
       {/* BRAND HEADER */}
@@ -83,7 +83,7 @@ export default function Home() {
             alt="Global trade network" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" style={{width: '1727px'}} />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
         </motion.div>
 
         <div className="container relative z-10">
