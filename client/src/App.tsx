@@ -7,6 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
+import FreightForwarding from "./pages/FreightForwarding";
+import EntrustedImport from "./pages/EntrustedImport";
 
 
 function Router() {
@@ -15,6 +17,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/products"} component={Products} />
       <Route path={"/services"} component={Services} />
+      <Route path={"/services/freight-forwarding"} component={FreightForwarding} />
+      <Route path={"/services/entrusted-import"} component={EntrustedImport} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

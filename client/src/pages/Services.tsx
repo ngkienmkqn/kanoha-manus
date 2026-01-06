@@ -1,7 +1,22 @@
 import { motion } from "framer-motion";
-import { Truck, Package, ShoppingBag, Headphones, ShieldCheck, Globe, Anchor, BarChart } from "lucide-react";
+import { Truck, Package, ShoppingBag, Headphones, ShieldCheck, Globe, Anchor, BarChart, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const services = [
+  {
+    title: "Freight Forwarding",
+    desc: "Efficiently managing the transportation of goods with expertise, precision, and reliability. Connect your business with global markets.",
+    icon: Truck,
+    features: ["Air, Sea, Road, Rail", "End-to-End Logistics", "Global Network", "Real-time Tracking"],
+    link: "/services/freight-forwarding"
+  },
+  {
+    title: "Entrusted Import",
+    desc: "A trusted solution for seamless importation. We act as your legal gateway, ensuring efficiency and full compliance.",
+    icon: ShieldCheck,
+    features: ["Regulatory Guidance", "Supplier Negotiation", "Customs Management", "Door-to-Door Delivery"],
+    link: "/services/entrusted-import"
+  },
   {
     title: "Drop Shipping",
     desc: "Ship directly to your customers without holding inventory. We handle the logistics, so you can focus on sales.",
@@ -73,6 +88,13 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                {service.link && (
+                  <Link href={service.link}>
+                    <a className="inline-flex items-center mt-8 text-primary font-bold uppercase tracking-widest hover:underline group">
+                      Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>
