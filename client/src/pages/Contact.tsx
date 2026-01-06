@@ -26,21 +26,21 @@ export default function Contact() {
                 <MapPin className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">Head Office</h3>
-                  <p className="text-muted-foreground">123 Logistics Avenue, District 1<br />Ho Chi Minh City, Vietnam</p>
+                  <p className="text-muted-foreground">RM 1307, 13/F, KENBO COMMERCIAL BLDG<br />335–339 QUEEN'S ROAD WEST, HK</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">Phone</h3>
-                  <p className="text-muted-foreground">+84 123 456 789</p>
+                  <p className="text-muted-foreground">(800) 788 7618</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">Email</h3>
-                  <p className="text-muted-foreground">contact@kanoha.com</p>
+                  <p className="text-muted-foreground">kanohalimited@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
