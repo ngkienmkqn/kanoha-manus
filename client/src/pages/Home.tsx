@@ -63,14 +63,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
 
 
-      {/* BRAND HEADER */}
-      <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
-        <Link href="/">
-          <a className="font-serif text-3xl font-bold tracking-tighter cursor-pointer">
-            KANOHA
-          </a>
-        </Link>
-      </div>
+
 
       {/* SECTION 1: HERO */}
       <Section id="home" className="h-screen flex items-center p-0 relative overflow-hidden">
