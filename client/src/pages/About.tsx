@@ -16,7 +16,7 @@ export default function About() {
               Bridging Global Markets with Trust & Efficiency.
             </h1>
             <p className="text-xl text-muted-foreground font-medium leading-relaxed mb-8">
-              KANOHA LIMITED is a premier import entrustment and logistics agency dedicated to simplifying global trade for businesses in Vietnam. We act as your legal and operational gateway, ensuring seamless compliance, efficient transport, and reliable sourcing.
+              KANOHA LIMITED is a premier import entrustment and logistics agency dedicated to simplifying global trade for businesses in HongKong. We act as your legal and operational gateway, ensuring seamless compliance, efficient transport, and reliable sourcing.
             </p>
           </div>
           <div className="relative">
@@ -53,7 +53,7 @@ export default function About() {
         <div className="bg-primary/5 p-12 border border-primary/10">
           <h2 className="text-3xl font-serif font-bold mb-6 text-center">Our Mission</h2>
           <p className="text-xl text-center max-w-3xl mx-auto leading-relaxed">
-            "To empower Vietnamese businesses by providing secure, transparent, and efficient access to global goods, fostering growth and international collaboration."
+            "To empower Hong Kong businesses by providing secure, transparent, and efficient access to global goods, fostering growth and international collaboration."
           </p>
         </div>
       </div>
