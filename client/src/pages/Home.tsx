@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   ArrowRight, 
-  Menu, 
-  X, 
-  ChevronDown,
   Anchor,
   Wind,
-  Map,
-  FileText
+  Map as MapIcon,
+  FileText,
+  ShieldCheck,
+  Globe,
+  ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,25 +20,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 // --- Components ---
 
 const Section = ({ id, className, children }: { id: string, className?: string, children: React.ReactNode }) => (
-  <section id={id} className={`min-h-screen w-full relative py-24 md:py-32 ${className}`}>
+  <section id={id} className={`min-h-screen w-full relative py-32 md:py-40 ${className}`}>
     {children}
   </section>
 );
 
-const PoeticButton = ({ children, onClick, variant = "primary", className = "" }: { children: React.ReactNode, onClick?: () => void, variant?: "primary" | "secondary", className?: string }) => (
+const AuthorityButton = ({ children, onClick, variant = "primary", className = "" }: { children: React.ReactNode, onClick?: () => void, variant?: "primary" | "secondary", className?: string }) => (
   <Button 
     onClick={onClick}
-    variant="ghost"
     className={`
-      relative overflow-hidden font-sans tracking-wide transition-all duration-500 rounded-full px-8 py-6 text-base
+      relative overflow-hidden font-sans font-bold tracking-wide transition-all duration-300 rounded-none px-10 py-7 text-lg uppercase
       ${variant === "primary" 
-        ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20" 
-        : "bg-transparent border border-primary/20 text-primary hover:bg-primary/5"}
+        ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
+        : "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"}
       ${className}
     `}
   >
@@ -49,10 +47,10 @@ const PoeticButton = ({ children, onClick, variant = "primary", className = "" }
 const FadeInText = ({ text, delay = 0, className = "" }: { text: string, delay?: number, className?: string }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 1, delay, ease: "easeOut" }}
+      transition={{ duration: 0.8, delay, ease: "easeOut" }}
       className={className}
     >
       {text}
@@ -60,308 +58,290 @@ const FadeInText = ({ text, delay = 0, className = "" }: { text: string, delay?:
   );
 };
 
-const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+const VerticalNavigation = () => {
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const sections = ["home", "services", "process", "transparency", "risk-control", "contact"];
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Transparency", href: "#transparency" },
-    { name: "Risk Control", href: "#risk-control" },
-    { name: "Contact", href: "#contact" },
+    { id: "home", label: "Home", icon: Globe },
+    { id: "services", label: "Services", icon: Anchor },
+    { id: "process", label: "Process", icon: ChevronRight },
+    { id: "transparency", label: "Transparency", icon: FileText },
+    { id: "risk-control", label: "Risk Control", icon: ShieldCheck },
+    { id: "contact", label: "Contact", icon: MapIcon },
   ];
 
   return (
-    <>
-      <header 
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 ${
-          isScrolled ? "bg-background/80 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-8"
-        }`}
-      >
-        <div className="container flex justify-between items-center">
-          <a href="#home" className="font-serif text-2xl tracking-tight text-primary">
-            KANOHA
-          </a>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a 
-                key={item.name} 
-                href={item.href} 
-                className="text-sm font-sans text-muted-foreground hover:text-primary transition-colors duration-300 soft-underline"
-              >
-                {item.name}
-              </a>
-            ))}
-            <PoeticButton 
-              variant="primary" 
-              className="px-6 py-4 text-sm"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Request Consultation
-            </PoeticButton>
-          </nav>
-
-          {/* Mobile Nav Toggle */}
-          <button 
-            className="md:hidden text-primary"
-            onClick={() => setIsOpen(true)}
+    <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-6">
+      {navItems.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          className="group flex items-center justify-end gap-4 relative"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <span 
+            className={`
+              text-sm font-bold uppercase tracking-widest transition-all duration-300
+              ${activeSection === item.id ? "opacity-100 translate-x-0 text-primary" : "opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 text-muted-foreground"}
+            `}
           >
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Menu */}
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent side="right" className="w-full sm:w-[400px] bg-background border-l border-border/50 p-0">
-          <div className="h-full flex flex-col p-8 justify-center items-center space-y-8">
-            <button 
-              className="absolute top-8 right-8 text-muted-foreground hover:text-primary transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              <X className="w-8 h-8" />
-            </button>
-            
-            {navItems.map((item) => (
-              <a 
-                key={item.name} 
-                href={item.href} 
-                onClick={() => setIsOpen(false)}
-                className="text-3xl font-serif text-primary hover:text-secondary transition-colors duration-500"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </SheetContent>
-      </Sheet>
-    </>
+            {item.label}
+          </span>
+          <div 
+            className={`
+              w-3 h-3 rounded-full transition-all duration-300 border-2
+              ${activeSection === item.id ? "bg-primary border-primary scale-125" : "bg-transparent border-muted-foreground group-hover:border-primary"}
+            `}
+          />
+        </a>
+      ))}
+    </nav>
   );
 };
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-secondary/20 selection:text-primary overflow-x-hidden">
-      <div className="grain-overlay" />
-      <Navigation />
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+      <VerticalNavigation />
+
+      {/* BRAND HEADER (Left) */}
+      <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
+        <a href="#home" className="font-serif text-3xl font-bold tracking-tighter">
+          KANOHA
+        </a>
+      </div>
 
       {/* SECTION 1: HERO */}
-      <Section id="home" className="h-screen flex items-center justify-center p-0 relative overflow-hidden">
+      <Section id="home" className="h-screen flex items-center p-0 relative overflow-hidden">
         <motion.div 
-          style={{ y, opacity }}
+          style={{ y }}
           className="absolute inset-0 z-0"
         >
           <img 
-            src="/images/hero-cinematic.jpg" 
-            alt="Calm sea horizon" 
+            src="/images/hero-global.jpg" 
+            alt="Global trade network" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-background/80" />
+          {/* Strong gradient overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
         </motion.div>
 
-        <div className="container relative z-10 text-center md:text-left pt-20">
-          <div className="max-w-3xl mx-auto md:mx-0">
+        <div className="container relative z-10 pt-20">
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-primary font-bold tracking-widest uppercase">Global Import Authority</span>
+            </div>
+            
             <FadeInText 
               text="Your trusted partner in bringing goods home." 
-              className="text-5xl md:text-7xl font-serif leading-[1.1] text-primary mb-8"
+              className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] text-foreground mb-8"
             />
+            
             <FadeInText 
               text="Across borders and regulations, we quietly handle the complexity of importing — so your business can move forward with confidence." 
-              delay={0.3}
-              className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-12 max-w-2xl"
+              delay={0.2}
+              className="text-xl md:text-2xl text-foreground/80 font-medium leading-relaxed mb-12 max-w-2xl"
             />
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 items-center md:items-start"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-6"
             >
-              <PoeticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Request a Consultation <ArrowRight className="w-4 h-4" />
-              </PoeticButton>
-              <button 
+              <AuthorityButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                Request Consultation <ArrowRight className="w-5 h-5" />
+              </AuthorityButton>
+              <AuthorityButton 
+                variant="secondary"
                 onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })}
-                className="text-primary hover:text-secondary transition-colors duration-300 flex items-center gap-2 text-sm tracking-wide uppercase"
               >
                 See the journey
-              </button>
+              </AuthorityButton>
             </motion.div>
           </div>
         </div>
-
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-primary/30 animate-bounce duration-[3000ms]"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </motion.div>
       </Section>
 
       {/* SECTION 2: SERVICES */}
-      <Section id="services" className="bg-background">
+      <Section id="services" className="bg-background relative">
         <div className="container">
-          <FadeInText 
-            text="What we take care of, end to end." 
-            className="text-4xl md:text-5xl font-serif text-primary mb-24 text-center md:text-left"
-          />
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+            <div className="lg:w-1/3 sticky top-32">
+              <span className="text-9xl font-serif text-muted/20 font-bold absolute -top-20 -left-10 -z-10">01</span>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold text-primary mb-8 leading-tight">
+                What we take care of, end to end.
+              </h2>
+              <div className="h-1 w-24 bg-secondary mb-8" />
+              <img 
+                src="/images/services-gateway.jpg" 
+                alt="Import Gateway" 
+                className="w-full rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
 
-          <div className="space-y-24 max-w-4xl mx-auto">
-            {[
-              {
-                title: "Import Entrustment",
-                desc: "We act as your legal importer, carrying the responsibility so you don’t have to.",
-                icon: Anchor
-              },
-              {
-                title: "Customs & Documentation",
-                desc: "Carefully prepared documents, reviewed before they ever reach customs.",
-                icon: FileText
-              },
-              {
-                title: "Duties & VAT Guidance",
-                desc: "Clear explanations. No surprises.",
-                icon: Map
-              },
-              {
-                title: "Shipment Coordination",
-                desc: "From the moment goods leave the supplier to their arrival in Vietnam.",
-                icon: Wind
-              }
-            ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1, delay: i * 0.1 }}
-                className="flex flex-col md:flex-row gap-8 md:gap-16 items-start group"
-              >
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-primary group-hover:bg-secondary/20 transition-colors duration-500 shrink-0">
-                  <service.icon className="w-5 h-5" />
-                </div>
-                <div className="flex-1 border-b border-border/50 pb-12 group-hover:border-secondary/50 transition-colors duration-700">
-                  <h3 className="text-2xl md:text-3xl font-serif text-primary mb-4">{service.title}</h3>
-                  <p className="text-lg text-muted-foreground font-light leading-relaxed">{service.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="lg:w-2/3 space-y-12 pt-8">
+              {[
+                {
+                  title: "Import Entrustment",
+                  desc: "We act as your legal importer, carrying the responsibility so you don’t have to.",
+                  icon: Globe
+                },
+                {
+                  title: "Customs & Documentation",
+                  desc: "Carefully prepared documents, reviewed before they ever reach customs.",
+                  icon: FileText
+                },
+                {
+                  title: "Duties & VAT Guidance",
+                  desc: "Clear explanations. No surprises. We provide upfront calculations.",
+                  icon: MapIcon
+                },
+                {
+                  title: "Shipment Coordination",
+                  desc: "From the moment goods leave the supplier to their arrival in Vietnam.",
+                  icon: Wind
+                }
+              ].map((service, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="flex gap-8 group border-b border-border pb-12 last:border-0"
+                >
+                  <div className="w-16 h-16 bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 shrink-0">
+                    <service.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-serif font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+                    <p className="text-xl text-muted-foreground font-medium leading-relaxed">{service.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
 
       {/* SECTION 3: PROCESS */}
-      <Section id="process" className="bg-muted/30 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-           <img src="/images/process-mist.jpg" alt="Mist texture" className="w-full h-full object-cover" />
+      <Section id="process" className="bg-muted/20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+           <img src="/images/process-journey.jpg" alt="Journey texture" className="w-full h-full object-cover" />
         </div>
 
         <div className="container relative z-10">
           <div className="text-center mb-24">
-            <FadeInText 
-              text="A clear path, from origin to arrival." 
-              className="text-4xl md:text-5xl font-serif text-primary mb-6"
-            />
+            <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">The Journey</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground">
+              A clear path, from origin to arrival.
+            </h2>
           </div>
 
-          <div className="relative max-w-3xl mx-auto pl-8 md:pl-0">
-            {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-primary/20 -translate-x-1/2" />
+          <div className="relative max-w-5xl mx-auto">
+            {/* Horizontal Line for Desktop */}
+            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-border" />
 
-            {[
-              { step: "We listen", desc: "Understanding your cargo, origin, and expectations." },
-              { step: "We prepare", desc: "Checking regulations, documents, and costs before anything moves." },
-              { step: "We coordinate", desc: "Working quietly with suppliers, forwarders, and authorities." },
-              { step: "We clear", desc: "Customs handled with care and attention." },
-              { step: "We deliver", desc: "Goods arrive. Documents are archived. The journey closes." }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1.5, delay: i * 0.2 }}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 mb-24 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-              >
-                <div className="hidden md:block w-1/2" />
-                
-                <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-3 h-3 bg-background border border-primary rounded-full z-10" />
-
-                <div className={`flex-1 pl-8 md:pl-0 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                  <h3 className="text-2xl font-serif text-primary mb-2">{item.step}</h3>
-                  <p className="text-muted-foreground font-light">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {[
+                { step: "01", title: "We listen", desc: "Understanding your cargo, origin, and expectations." },
+                { step: "02", title: "We prepare", desc: "Checking regulations, documents, and costs." },
+                { step: "03", title: "We coordinate", desc: "Working quietly with suppliers and authorities." },
+                { step: "04", title: "We clear", desc: "Customs handled with care and attention." },
+                { step: "05", title: "We deliver", desc: "Goods arrive. The journey closes." }
+              ].map((item, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.15 }}
+                  className="relative pt-8 md:pt-12 text-center md:text-left group"
+                >
+                  <div className="hidden md:block absolute top-10 left-0 w-4 h-4 bg-background border-4 border-primary rounded-full z-10 group-hover:scale-150 transition-transform duration-300" />
+                  
+                  <span className="text-6xl font-serif font-bold text-muted/20 absolute top-0 left-0 md:left-4 -z-10">{item.step}</span>
+                  <h3 className="text-2xl font-serif font-bold text-primary mb-3 mt-4">{item.title}</h3>
+                  <p className="text-lg text-muted-foreground font-medium leading-snug">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
 
       {/* SECTION 4: TRANSPARENCY */}
-      <Section id="transparency" className="bg-background flex items-center">
+      <Section id="transparency" className="bg-primary text-primary-foreground flex items-center">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <span className="text-9xl font-serif text-white/10 font-bold block mb-8">03</span>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight">
                 Clarity, before commitment.
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
+              <div className="space-y-8 text-xl md:text-2xl font-medium leading-relaxed text-primary-foreground/90">
                 <p>
                   Before we proceed, you receive a clear explanation of expected costs — service fees, duties, taxes, and logistics — in writing.
                 </p>
-                <p>
-                  No charts. No dashboards.
-                </p>
-                <p className="text-primary font-normal">
-                  Just honest numbers, explained in plain language.
-                </p>
+                <div className="pl-6 border-l-4 border-secondary">
+                  <p className="italic">No charts. No dashboards.</p>
+                  <p className="mt-2 text-secondary font-bold">Just honest numbers, explained in plain language.</p>
+                </div>
               </div>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5 }}
-              className="bg-muted/30 p-12 rounded-sm border border-border/50 relative"
+              transition={{ duration: 0.8 }}
+              className="bg-white text-foreground p-12 shadow-2xl relative"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-secondary/30" />
-              <div className="font-serif text-2xl text-primary mb-8 italic">"Trust is built on transparency."</div>
-              <div className="space-y-4 font-sans text-sm text-muted-foreground">
-                <div className="flex justify-between border-b border-border/50 pb-2">
-                  <span>Service Fee</span>
-                  <span>Fixed Rate</span>
+              <div className="absolute top-0 left-0 w-full h-2 bg-secondary" />
+              <div className="font-serif text-3xl font-bold text-primary mb-10">Estimated Cost Breakdown</div>
+              <div className="space-y-6 font-sans text-lg">
+                <div className="flex justify-between border-b border-border pb-4">
+                  <span className="font-bold text-muted-foreground">Service Fee</span>
+                  <span className="font-bold">Fixed Rate</span>
                 </div>
-                <div className="flex justify-between border-b border-border/50 pb-2">
-                  <span>Import Duties</span>
-                  <span>Per HS Code</span>
+                <div className="flex justify-between border-b border-border pb-4">
+                  <span className="font-bold text-muted-foreground">Import Duties</span>
+                  <span className="font-bold">Per HS Code</span>
                 </div>
-                <div className="flex justify-between border-b border-border/50 pb-2">
-                  <span>VAT</span>
-                  <span>Standard Rate</span>
+                <div className="flex justify-between border-b border-border pb-4">
+                  <span className="font-bold text-muted-foreground">VAT</span>
+                  <span className="font-bold">Standard Rate</span>
                 </div>
-                <div className="flex justify-between pt-2 text-primary font-medium">
+                <div className="flex justify-between pt-4 text-primary text-xl font-bold">
                   <span>Total Estimated Cost</span>
                   <span>Provided Upfront</span>
                 </div>
@@ -372,53 +352,58 @@ export default function Home() {
       </Section>
 
       {/* SECTION 5: RISK CONTROL */}
-      <Section id="risk-control" className="bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
-           <img src="/images/map-watercolor.jpg" alt="Map texture" className="w-full h-full object-cover" />
-        </div>
-        
+      <Section id="risk-control" className="bg-background relative overflow-hidden">
         <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeInText 
-              text="Handled with foresight." 
-              className="text-4xl md:text-5xl font-serif mb-16"
-            />
+          <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
+            <div className="lg:w-1/2">
+              <img 
+                src="/images/compliance-shield.jpg" 
+                alt="Risk Control Shield" 
+                className="w-full shadow-2xl"
+              />
+            </div>
+            
+            <div className="lg:w-1/2">
+              <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">Risk Control</span>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-12">
+                Handled with foresight.
+              </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-              {[
-                "Regulations reviewed before shipping",
-                "HS codes considered carefully",
-                "Documents checked, not rushed",
-                "Compliance treated as protection, not paperwork"
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: i * 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="w-2 h-2 bg-secondary rounded-full mt-2.5 shrink-0" />
-                  <p className="text-xl md:text-2xl font-light leading-relaxed text-primary-foreground/90">
-                    {item}
-                  </p>
-                </motion.div>
-              ))}
+              <div className="space-y-8">
+                {[
+                  "Regulations reviewed before shipping",
+                  "HS codes considered carefully",
+                  "Documents checked, not rushed",
+                  "Compliance treated as protection, not paperwork"
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="flex items-center gap-6"
+                  >
+                    <div className="w-3 h-3 bg-secondary rotate-45 shrink-0" />
+                    <p className="text-2xl font-medium text-foreground">
+                      {item}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </Section>
 
       {/* SECTION 6: FAQs */}
-      <Section id="faqs" className="bg-background">
-        <div className="container max-w-3xl">
-          <FadeInText 
-            text="Common Questions" 
-            className="text-3xl md:text-4xl font-serif text-primary mb-12 text-center"
-          />
+      <Section id="faqs" className="bg-muted/30">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-16 text-center">
+            Common Questions
+          </h2>
           
-          <Accordion type="single" collapsible className="w-full space-y-6">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {[
               { q: "Do I need my own import license?", a: "Not necessarily. We act as the importer-of-record, handling the legal requirements so you can focus on your business." },
               { q: "Can you handle sea and air shipments?", a: "Yes. Whether it's a container by sea or urgent cargo by air, we coordinate the entire journey." },
@@ -426,11 +411,11 @@ export default function Home() {
               { q: "Do you support regulated goods?", a: "Yes. We screen all regulations beforehand to ensure full compliance and safety." },
               { q: "How do I track progress?", a: "We keep you informed at every key milestone, personally and proactively." }
             ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-b border-border/50 px-0">
-                <AccordionTrigger className="font-serif text-xl text-primary hover:text-secondary hover:no-underline py-6 text-left">
+              <AccordionItem key={i} value={`item-${i}`} className="bg-background border border-border px-8 py-2 shadow-sm">
+                <AccordionTrigger className="font-serif text-xl font-bold text-foreground hover:text-primary hover:no-underline py-6 text-left">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-lg font-light leading-relaxed pb-6">
+                <AccordionContent className="text-muted-foreground text-lg font-medium leading-relaxed pb-6">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -440,82 +425,82 @@ export default function Home() {
       </Section>
 
       {/* SECTION 7: CONTACT */}
-      <Section id="contact" className="bg-muted/30">
-        <div className="container max-w-2xl">
+      <Section id="contact" className="bg-primary text-primary-foreground">
+        <div className="container max-w-3xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Let’s talk about your shipment.</h2>
-            <p className="text-muted-foreground font-light text-lg">
+            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">Let’s talk about your shipment.</h2>
+            <p className="text-primary-foreground/80 font-medium text-xl">
               Tell us what you need to move, and we'll help you find the best way home.
             </p>
           </div>
 
-          <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-            <div className="space-y-4">
+          <form className="space-y-8 bg-white/5 p-12 backdrop-blur-sm border border-white/10" onSubmit={(e) => e.preventDefault()}>
+            <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-xs uppercase tracking-widest text-muted-foreground">Name</Label>
-                  <Input id="name" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="Your name" />
+                  <Label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-secondary">Name</Label>
+                  <Input id="name" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your name" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-xs uppercase tracking-widest text-muted-foreground">Email</Label>
-                  <Input id="email" type="email" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="Your email" />
+                  <Label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-secondary">Email</Label>
+                  <Input id="email" type="email" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your email" />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-xs uppercase tracking-widest text-muted-foreground">Phone</Label>
-                  <Input id="phone" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="Your phone number" />
+                  <Label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-secondary">Phone</Label>
+                  <Input id="phone" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your phone number" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="origin" className="text-xs uppercase tracking-widest text-muted-foreground">Origin Country</Label>
-                  <Input id="origin" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="Where is it coming from?" />
+                  <Label htmlFor="origin" className="text-sm font-bold uppercase tracking-widest text-secondary">Origin Country</Label>
+                  <Input id="origin" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Where is it coming from?" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <Label htmlFor="cargo" className="text-xs uppercase tracking-widest text-muted-foreground">Cargo Description</Label>
-                  <Input id="cargo" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="What are you shipping?" />
+                  <Label htmlFor="cargo" className="text-sm font-bold uppercase tracking-widest text-secondary">Cargo Description</Label>
+                  <Input id="cargo" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="What are you shipping?" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="value" className="text-xs uppercase tracking-widest text-muted-foreground">Estimated Value</Label>
-                  <Input id="value" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors" placeholder="Approximate value" />
+                  <Label htmlFor="value" className="text-sm font-bold uppercase tracking-widest text-secondary">Estimated Value</Label>
+                  <Input id="value" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Approximate value" />
                 </div>
               </div>
 
               <div className="space-y-2 pt-4">
-                <Label htmlFor="message" className="text-xs uppercase tracking-widest text-muted-foreground">Message</Label>
-                <Textarea id="message" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors min-h-[100px] resize-none" placeholder="Any specific details or questions?" />
+                <Label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-secondary">Message</Label>
+                <Textarea id="message" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors min-h-[120px] resize-none placeholder:text-white/30" placeholder="Any specific details or questions?" />
               </div>
             </div>
 
             <div className="pt-8 text-center">
-              <PoeticButton className="w-full md:w-auto min-w-[200px]">
+              <AuthorityButton className="w-full md:w-auto min-w-[240px] bg-secondary text-primary hover:bg-white">
                 Send Request
-              </PoeticButton>
+              </AuthorityButton>
             </div>
           </form>
         </div>
       </Section>
 
       {/* FOOTER */}
-      <footer id="footer" className="bg-background py-24 border-t border-border/30">
+      <footer id="footer" className="bg-background py-24 border-t border-border">
         <div className="container text-center">
-          <h2 className="text-2xl font-serif text-primary mb-8">KANOHA LIMITED</h2>
+          <h2 className="text-3xl font-serif font-bold text-primary mb-8">KANOHA LIMITED</h2>
           
-          <div className="text-sm text-muted-foreground font-light space-y-2 mb-12">
+          <div className="text-lg text-muted-foreground font-medium space-y-2 mb-12">
             <p>RM 1307, 13/F, KENBO COMMERCIAL BUILDING</p>
             <p>335–339 QUEEN'S ROAD WEST, HONG KONG</p>
-            <div className="pt-4 flex justify-center gap-6">
-              <a href="tel:8007897618" className="hover:text-primary transition-colors">(800) 789 7618</a>
-              <a href="mailto:kanohalimited@gmail.com" className="hover:text-primary transition-colors">kanohalimited@gmail.com</a>
+            <div className="pt-6 flex justify-center gap-8">
+              <a href="tel:8007897618" className="hover:text-primary transition-colors font-bold">(800) 789 7618</a>
+              <a href="mailto:kanohalimited@gmail.com" className="hover:text-primary transition-colors font-bold">kanohalimited@gmail.com</a>
             </div>
           </div>
 
-          <div className="w-12 h-px bg-border mx-auto mb-12" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-12" />
 
-          <p className="text-lg font-serif text-primary italic">
+          <p className="text-2xl font-serif text-primary italic font-bold">
             "Every shipment matters."
           </p>
         </div>
