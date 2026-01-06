@@ -11,7 +11,11 @@ import {
   ChevronRight,
   MessageSquare,
   Home as HomeIcon,
-  HelpCircle
+  HelpCircle,
+  Package,
+  Truck,
+  Headphones,
+  ShoppingBag
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,8 +70,7 @@ const CommandNavigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "services", "process", "transparency", "risk-control", "faqs", "contact"];
-      // Adjust offset to trigger earlier
+      const sections = ["home", "about", "products", "services", "process", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight * 0.4;
 
       for (const section of sections) {
@@ -88,16 +91,15 @@ const CommandNavigation = () => {
 
   const navItems = [
     { id: "home", label: "Home", icon: HomeIcon },
+    { id: "about", label: "About", icon: Globe },
+    { id: "products", label: "Products", icon: Package },
     { id: "services", label: "Services", icon: Anchor },
     { id: "process", label: "Process", icon: ChevronRight },
-    { id: "transparency", label: "Transparency", icon: FileText },
-    { id: "risk-control", label: "Compliance", icon: ShieldCheck },
-    { id: "faqs", label: "FAQs", icon: HelpCircle },
+    { id: "contact", label: "Contact", icon: MessageSquare },
   ];
 
   return (
     <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
-      {/* Top Items */}
       <div className="flex flex-col w-full">
         {navItems.map((item) => (
           <a
@@ -112,14 +114,12 @@ const CommandNavigation = () => {
               ${activeSection === item.id ? "bg-white/5" : "hover:bg-white/5"}
             `}
           >
-            {/* Active Indicator Line */}
             <div 
               className={`
                 absolute left-0 top-0 bottom-0 w-1 bg-secondary transition-all duration-300
                 ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-50"}
               `} 
             />
-            
             <item.icon 
               className={`
                 w-6 h-6 mb-1.5 transition-colors duration-300
@@ -138,7 +138,6 @@ const CommandNavigation = () => {
         ))}
       </div>
 
-      {/* Bottom CTA */}
       <div className="w-full px-2">
         <button
           onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
@@ -162,7 +161,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden lg:pr-[88px]">
       <CommandNavigation />
 
-      {/* BRAND HEADER (Left) */}
+      {/* BRAND HEADER */}
       <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
         <a href="#home" className="font-serif text-3xl font-bold tracking-tighter">
           KANOHA
@@ -180,7 +179,6 @@ export default function Home() {
             alt="Global trade network" 
             className="w-full h-full object-cover"
           />
-          {/* Strong gradient overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
         </motion.div>
 
@@ -188,16 +186,16 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
-              <span className="text-primary font-bold tracking-widest uppercase">Global Import Authority</span>
+              <span className="text-primary font-bold tracking-widest uppercase">Global Distribution Authority</span>
             </div>
             
             <FadeInText 
-              text="Your trusted partner in bringing goods home." 
+              text="Exclusive Brands. Unbeatable Prices. Global Reach." 
               className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] text-foreground mb-8"
             />
             
             <FadeInText 
-              text="Across borders and regulations, we quietly handle the complexity of importing — so your business can move forward with confidence." 
+              text="We provide access to over 3,000 of today's most in-demand items. Elevate your online store without upfront investment." 
               delay={0.2}
               className="text-xl md:text-2xl text-foreground/80 font-medium leading-relaxed mb-12 max-w-2xl"
             />
@@ -208,331 +206,249 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-6"
             >
-              <AuthorityButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Request Consultation <ArrowRight className="w-5 h-5" />
+              <AuthorityButton onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}>
+                Explore Products <ArrowRight className="w-5 h-5" />
               </AuthorityButton>
               <AuthorityButton 
                 variant="secondary"
-                onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
               >
-                See the journey
+                Why Choose Us
               </AuthorityButton>
             </motion.div>
           </div>
         </div>
       </Section>
 
-      {/* SECTION 2: SERVICES */}
-      <Section id="services" className="bg-background relative">
+      {/* SECTION 2: ABOUT / WHY US */}
+      <Section id="about" className="bg-background relative">
         <div className="container">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            <div className="lg:w-1/3 sticky top-32">
-              <span className="text-9xl font-serif text-muted/20 font-bold absolute -top-20 -left-10 -z-10">01</span>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold text-primary mb-8 leading-tight">
-                What we take care of, end to end.
-              </h2>
-              <div className="h-1 w-24 bg-secondary mb-8" />
-              <img 
-                src="/images/services-gateway.jpg" 
-                alt="Import Gateway" 
-                className="w-full rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-
-            <div className="lg:w-2/3 space-y-12 pt-8">
-              {[
-                {
-                  title: "Import Entrustment",
-                  desc: "We act as your legal importer, carrying the responsibility so you don’t have to.",
-                  icon: Globe
-                },
-                {
-                  title: "Customs & Documentation",
-                  desc: "Carefully prepared documents, reviewed before they ever reach customs.",
-                  icon: FileText
-                },
-                {
-                  title: "Duties & VAT Guidance",
-                  desc: "Clear explanations. No surprises. We provide upfront calculations.",
-                  icon: MapIcon
-                },
-                {
-                  title: "Shipment Coordination",
-                  desc: "From the moment goods leave the supplier to their arrival in Vietnam.",
-                  icon: Wind
-                }
-              ].map((service, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="flex gap-8 group border-b border-border pb-12 last:border-0"
-                >
-                  <div className="w-16 h-16 bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 shrink-0">
-                    <service.icon className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-serif font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-                    <p className="text-xl text-muted-foreground font-medium leading-relaxed">{service.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 3: PROCESS */}
-      <Section id="process" className="bg-muted/20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-           <img src="/images/process-journey.jpg" alt="Journey texture" className="w-full h-full object-cover" />
-        </div>
-
-        <div className="container relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">The Journey</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground">
-              A clear path, from origin to arrival.
-            </h2>
-          </div>
-
-          <div className="relative max-w-5xl mx-auto">
-            {/* Horizontal Line for Desktop */}
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-border" />
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-              {[
-                { step: "01", title: "We listen", desc: "Understanding your cargo, origin, and expectations." },
-                { step: "02", title: "We prepare", desc: "Checking regulations, documents, and costs." },
-                { step: "03", title: "We coordinate", desc: "Working quietly with suppliers and authorities." },
-                { step: "04", title: "We clear", desc: "Customs handled with care and attention." },
-                { step: "05", title: "We deliver", desc: "Goods arrive. The journey closes." }
-              ].map((item, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.15 }}
-                  className="relative pt-8 md:pt-12 text-center md:text-left group"
-                >
-                  <div className="hidden md:block absolute top-10 left-0 w-4 h-4 bg-background border-4 border-primary rounded-full z-10 group-hover:scale-150 transition-transform duration-300" />
-                  
-                  <span className="text-6xl font-serif font-bold text-muted/20 absolute top-0 left-0 md:left-4 -z-10">{item.step}</span>
-                  <h3 className="text-2xl font-serif font-bold text-primary mb-3 mt-4">{item.title}</h3>
-                  <p className="text-lg text-muted-foreground font-medium leading-snug">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 4: TRANSPARENCY */}
-      <Section id="transparency" className="bg-primary text-primary-foreground flex items-center">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <span className="text-9xl font-serif text-white/10 font-bold block mb-8">03</span>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight">
-                Clarity, before commitment.
-              </h2>
-              <div className="space-y-8 text-xl md:text-2xl font-medium leading-relaxed text-primary-foreground/90">
-                <p>
-                  Before we proceed, you receive a clear explanation of expected costs — service fees, duties, taxes, and logistics — in writing.
-                </p>
-                <div className="pl-6 border-l-4 border-secondary">
-                  <p className="italic">No charts. No dashboards.</p>
-                  <p className="mt-2 text-secondary font-bold">Just honest numbers, explained in plain language.</p>
-                </div>
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white text-foreground p-12 shadow-2xl relative"
-            >
-              <div className="absolute top-0 left-0 w-full h-2 bg-secondary" />
-              <div className="font-serif text-3xl font-bold text-primary mb-10">Estimated Cost Breakdown</div>
-              <div className="space-y-6 font-sans text-lg">
-                <div className="flex justify-between border-b border-border pb-4">
-                  <span className="font-bold text-muted-foreground">Service Fee</span>
-                  <span className="font-bold">Fixed Rate</span>
-                </div>
-                <div className="flex justify-between border-b border-border pb-4">
-                  <span className="font-bold text-muted-foreground">Import Duties</span>
-                  <span className="font-bold">Per HS Code</span>
-                </div>
-                <div className="flex justify-between border-b border-border pb-4">
-                  <span className="font-bold text-muted-foreground">VAT</span>
-                  <span className="font-bold">Standard Rate</span>
-                </div>
-                <div className="flex justify-between pt-4 text-primary text-xl font-bold">
-                  <span>Total Estimated Cost</span>
-                  <span>Provided Upfront</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 5: RISK CONTROL */}
-      <Section id="risk-control" className="bg-background relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <img 
-                src="/images/compliance-shield.jpg" 
-                alt="Risk Control Shield" 
-                className="w-full shadow-2xl"
-              />
-            </div>
-            
-            <div className="lg:w-1/2">
-              <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">Risk Control</span>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-12">
-                Handled with foresight.
+              <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">Why Partner With Us</span>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-8 leading-tight">
+                Grow your business without the inventory risk.
               </h2>
-
-              <div className="space-y-8">
+              <p className="text-xl text-muted-foreground font-medium leading-relaxed mb-8">
+                The biggest advantage of drop shipping is that you can run a business without investing thousands of dollars in inventory. Leave that to us.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  "Regulations reviewed before shipping",
-                  "HS codes considered carefully",
-                  "Documents checked, not rushed",
-                  "Compliance treated as protection, not paperwork"
+                  "Over 3,000 in-demand items",
+                  "Fast processing & shipping",
+                  "Blind dropshipping support",
+                  "Dedicated support team"
                 ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="flex items-center gap-6"
-                  >
-                    <div className="w-3 h-3 bg-secondary rotate-45 shrink-0" />
-                    <p className="text-2xl font-medium text-foreground">
-                      {item}
-                    </p>
-                  </motion.div>
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-secondary rotate-45" />
+                    <span className="text-lg font-bold text-foreground">{item}</span>
+                  </div>
                 ))}
               </div>
             </div>
+            <div className="lg:w-1/2 relative">
+              <div className="absolute -inset-4 border-2 border-primary/20 z-0" />
+              <img 
+                src="/images/services-gateway.jpg" 
+                alt="Warehouse Operations" 
+                className="w-full relative z-10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* SECTION 6: FAQs */}
-      <Section id="faqs" className="bg-muted/30">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-16 text-center">
-            Common Questions
-          </h2>
-          
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {[
-              { q: "Do I need my own import license?", a: "Not necessarily. We act as the importer-of-record, handling the legal requirements so you can focus on your business." },
-              { q: "Can you handle sea and air shipments?", a: "Yes. Whether it's a container by sea or urgent cargo by air, we coordinate the entire journey." },
-              { q: "How do you estimate duties and VAT?", a: "We carefully review your goods and their HS codes to provide a precise estimate before you commit." },
-              { q: "Do you support regulated goods?", a: "Yes. We screen all regulations beforehand to ensure full compliance and safety." },
-              { q: "How do I track progress?", a: "We keep you informed at every key milestone, personally and proactively." }
-            ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="bg-background border border-border px-8 py-2 shadow-sm">
-                <AccordionTrigger className="font-serif text-xl font-bold text-foreground hover:text-primary hover:no-underline py-6 text-left">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-lg font-medium leading-relaxed pb-6">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </Section>
-
-      {/* SECTION 7: CONTACT */}
-      <Section id="contact" className="bg-primary text-primary-foreground">
-        <div className="container max-w-3xl">
+      {/* SECTION 3: PRODUCTS */}
+      <Section id="products" className="bg-muted/20">
+        <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">Let’s talk about your shipment.</h2>
-            <p className="text-primary-foreground/80 font-medium text-xl">
-              Tell us what you need to move, and we'll help you find the best way home.
-            </p>
+            <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">Our Inventory</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground">
+              High-demand categories.
+            </h2>
           </div>
 
-          <form className="space-y-8 bg-white/5 p-12 backdrop-blur-sm border border-white/10" onSubmit={(e) => e.preventDefault()}>
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-secondary">Name</Label>
-                  <Input id="name" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your name" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {[
+              { name: "Consumer Electronics", img: "/images/products/product_dvd_player.webp" },
+              { name: "Audio Systems", img: "/images/products/product_pa_system.webp" },
+              { name: "Gaming Accessories", img: "/images/products/product_switch_kit.webp" },
+              { name: "Portable Audio", img: "/images/products/product_speaker_yellow.webp" }
+            ].map((cat, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative aspect-square bg-white overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={cat.img} 
+                  alt={cat.name} 
+                  className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl uppercase tracking-widest border-b-2 border-secondary pb-1">
+                    {cat.name}
+                  </span>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-secondary">Email</Label>
-                  <Input id="email" type="email" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your email" />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm font-bold uppercase tracking-widest text-secondary">Phone</Label>
-                  <Input id="phone" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Your phone number" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="origin" className="text-sm font-bold uppercase tracking-widest text-secondary">Origin Country</Label>
-                  <Input id="origin" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Where is it coming from?" />
-                </div>
-              </div>
+              </motion.div>
+            ))}
+          </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <Label htmlFor="cargo" className="text-sm font-bold uppercase tracking-widest text-secondary">Cargo Description</Label>
-                  <Input id="cargo" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="What are you shipping?" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="value" className="text-sm font-bold uppercase tracking-widest text-secondary">Estimated Value</Label>
-                  <Input id="value" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors placeholder:text-white/30" placeholder="Approximate value" />
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
+            {[
+              "Air Fryers", "Kitchen Gadgets", "Dinnerware", "Car Audio", 
+              "Home Theater", "Headphones", "Personal Care", "Wall Mounts",
+              "Smart Home", "Office Supplies", "Outdoor Gear", "Kids Electronics"
+            ].map((tag, i) => (
+              <div key={i} className="bg-background border border-border py-3 px-2 text-sm font-bold text-muted-foreground hover:text-primary hover:border-primary transition-colors cursor-default">
+                {tag}
               </div>
+            ))}
+          </div>
+        </div>
+      </Section>
 
-              <div className="space-y-2 pt-4">
-                <Label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-secondary">Message</Label>
-                <Textarea id="message" className="bg-transparent border-0 border-b-2 border-white/20 rounded-none px-0 py-4 text-xl focus-visible:ring-0 focus-visible:border-secondary transition-colors min-h-[120px] resize-none placeholder:text-white/30" placeholder="Any specific details or questions?" />
-              </div>
+      {/* SECTION 4: SERVICES */}
+      <Section id="services" className="bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row gap-16">
+            <div className="lg:w-1/3">
+              <span className="text-9xl font-serif text-white/10 font-bold absolute -mt-20 -ml-10">04</span>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight relative z-10">
+                Comprehensive Distribution Services.
+              </h2>
+              <p className="text-xl text-primary-foreground/80 font-medium leading-relaxed">
+                We are dedicated to providing you with an opportunity to expand or start your business by utilizing our incredible selection.
+              </p>
             </div>
 
-            <div className="pt-8 text-center">
-              <AuthorityButton className="w-full md:w-auto min-w-[240px] bg-secondary text-primary hover:bg-white">
-                Send Request
+            <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-12">
+              {[
+                {
+                  title: "Drop Shipping",
+                  desc: "Ship directly to your customers without holding inventory. We handle the logistics.",
+                  icon: Truck
+                },
+                {
+                  title: "Wholesale Distribution",
+                  desc: "Bulk purchasing options for retailers looking to stock their own shelves.",
+                  icon: Package
+                },
+                {
+                  title: "Fulfillment Services",
+                  desc: "Let us handle the picking, packing, and shipping of your orders.",
+                  icon: ShoppingBag
+                },
+                {
+                  title: "Customer Support",
+                  desc: "Dedicated team available Mon-Fri 9am-5pm PST to assist you.",
+                  icon: Headphones
+                }
+              ].map((service, i) => (
+                <div key={i} className="border-l-2 border-secondary pl-8">
+                  <service.icon className="w-10 h-10 text-secondary mb-6" />
+                  <h3 className="text-2xl font-serif font-bold mb-4">{service.title}</h3>
+                  <p className="text-lg text-primary-foreground/70">{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 5: PROCESS */}
+      <Section id="process" className="bg-background relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="text-center mb-24">
+            <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">How It Works</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground">
+              Simple steps to start selling.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-border -z-10" />
+            
+            {[
+              { step: "01", title: "Join the Family", desc: "Sign up to access our exclusive catalog and pricing." },
+              { step: "02", title: "List Products", desc: "Add our high-demand items to your online store or marketplace." },
+              { step: "03", title: "We Ship", desc: "When you get an order, we ship it directly to your customer." }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className="bg-background pt-8 text-center group"
+              >
+                <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-serif font-bold mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-300 relative z-10">
+                  {item.step}
+                </div>
+                <h3 className="text-3xl font-serif font-bold text-primary mb-4">{item.title}</h3>
+                <p className="text-xl text-muted-foreground font-medium">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 6: CONTACT */}
+      <Section id="contact" className="bg-muted/30">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-5xl md:text-6xl font-serif font-bold text-primary mb-8">
+            Ready to grow your business?
+          </h2>
+          <p className="text-2xl text-muted-foreground font-medium mb-12">
+            Join Kanoha today and unlock access to thousands of products.
+          </p>
+
+          <div className="bg-background p-12 shadow-2xl border border-border">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+              <div>
+                <h3 className="text-xl font-bold uppercase tracking-widest text-primary mb-6">Contact Us</h3>
+                <div className="space-y-4 text-lg font-medium text-foreground">
+                  <p className="flex items-center gap-4">
+                    <MessageSquare className="w-5 h-5 text-secondary" />
+                    (800) 788 7618
+                  </p>
+                  <p className="flex items-center gap-4">
+                    <Globe className="w-5 h-5 text-secondary" />
+                    kanohalimited@gmail.com
+                  </p>
+                  <p className="flex items-center gap-4">
+                    <MapIcon className="w-5 h-5 text-secondary" />
+                    RM 1307, 13/F, KENBO COMMERCIAL BLDG<br/>335–339 QUEEN'S ROAD WEST, HK
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold uppercase tracking-widest text-primary mb-6">Support Hours</h3>
+                <div className="space-y-4 text-lg font-medium text-foreground">
+                  <p>Monday - Friday</p>
+                  <p className="text-2xl font-bold text-primary">9:00 AM - 5:00 PM PST</p>
+                  <p className="text-muted-foreground">Dedicated support team ready to assist.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-12 pt-12 border-t border-border">
+              <AuthorityButton className="w-full text-xl py-8">
+                Become a Member
               </AuthorityButton>
             </div>
-          </form>
+          </div>
         </div>
       </Section>
 
       {/* FOOTER */}
-      <footer id="footer" className="bg-background py-24 border-t border-border">
+      <footer className="bg-[#0B1120] text-white py-12 border-t border-white/10">
         <div className="container text-center">
-          <h2 className="text-3xl font-serif font-bold text-primary mb-8">KANOHA LIMITED</h2>
-          
-          <div className="text-lg text-muted-foreground font-medium space-y-2 mb-12">
-            <p>RM 1307, 13/F, KENBO COMMERCIAL BUILDING</p>
-            <p>335–339 QUEEN'S ROAD WEST, HONG KONG</p>
-            <div className="pt-6 flex justify-center gap-8">
-              <a href="tel:8007897618" className="hover:text-primary transition-colors font-bold">(800) 789 7618</a>
-              <a href="mailto:kanohalimited@gmail.com" className="hover:text-primary transition-colors font-bold">kanohalimited@gmail.com</a>
-            </div>
-          </div>
-
-          <div className="w-24 h-1 bg-primary mx-auto mb-12" />
-
-          <p className="text-2xl font-serif text-primary italic font-bold">
-            "Every shipment matters."
+          <p className="text-white/50 font-medium">
+            © {new Date().getFullYear()} KANOHA LIMITED. All rights reserved.
           </p>
         </div>
       </footer>
