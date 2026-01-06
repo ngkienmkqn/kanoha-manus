@@ -3,30 +3,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   ArrowRight, 
   Anchor,
-  Wind,
   Map as MapIcon,
-  FileText,
-  ShieldCheck,
   Globe,
   ChevronRight,
   MessageSquare,
   Home as HomeIcon,
-  HelpCircle,
   Package,
   Truck,
-  Headphones,
-  ShoppingBag
+  ShoppingBag,
+  Headphones
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Link, useLocation } from "wouter";
 
 // --- Components ---
 
@@ -66,11 +54,15 @@ const FadeInText = ({ text, delay = 0, className = "" }: { text: string, delay?:
 };
 
 const CommandNavigation = () => {
+  const [location] = useLocation();
   const [activeSection, setActiveSection] = useState("home");
 
+  // Only track scroll on home page
   useEffect(() => {
+    if (location !== "/") return;
+
     const handleScroll = () => {
-      const sections = ["home", "about", "products", "services", "process", "contact"];
+      const sections = ["home", "about", "process", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight * 0.4;
 
       for (const section of sections) {
@@ -87,60 +79,63 @@ const CommandNavigation = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location]);
 
   const navItems = [
-    { id: "home", label: "Home", icon: HomeIcon },
-    { id: "about", label: "About", icon: Globe },
-    { id: "products", label: "Products", icon: Package },
-    { id: "services", label: "Services", icon: Anchor },
-    { id: "process", label: "Process", icon: ChevronRight },
-    { id: "contact", label: "Contact", icon: MessageSquare },
+    { id: "home", label: "Home", icon: HomeIcon, path: "/" },
+    { id: "about", label: "About", icon: Globe, path: "/#about" },
+    { id: "products", label: "Products", icon: Package, path: "/products" },
+    { id: "services", label: "Services", icon: Anchor, path: "/services" },
+    { id: "process", label: "Process", icon: ChevronRight, path: "/#process" },
+    { id: "contact", label: "Contact", icon: MessageSquare, path: "/#contact" },
   ];
 
   return (
     <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
       <div className="flex flex-col w-full">
-        {navItems.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className={`
-              group relative flex flex-col items-center justify-center py-5 w-full transition-all duration-300
-              ${activeSection === item.id ? "bg-white/5" : "hover:bg-white/5"}
-            `}
-          >
-            <div 
-              className={`
-                absolute left-0 top-0 bottom-0 w-1 bg-secondary transition-all duration-300
-                ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-50"}
-              `} 
-            />
-            <item.icon 
-              className={`
-                w-6 h-6 mb-1.5 transition-colors duration-300
-                ${activeSection === item.id ? "text-white" : "text-white/70 group-hover:text-white"}
-              `} 
-            />
-            <span 
-              className={`
-                text-[10px] font-bold uppercase tracking-wider transition-colors duration-300
-                ${activeSection === item.id ? "text-white" : "text-white/70 group-hover:text-white"}
-              `}
-            >
-              {item.label}
-            </span>
-          </a>
-        ))}
+        {navItems.map((item) => {
+          const isActive = location === item.path || (location === "/" && activeSection === item.id && item.path.startsWith("/#"));
+          
+          return (
+            <Link key={item.id} href={item.path}>
+              <a
+                className={`
+                  group relative flex flex-col items-center justify-center py-5 w-full transition-all duration-300 cursor-pointer
+                  ${isActive ? "bg-white/5" : "hover:bg-white/5"}
+                `}
+              >
+                <div 
+                  className={`
+                    absolute left-0 top-0 bottom-0 w-1 bg-secondary transition-all duration-300
+                    ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-50"}
+                  `} 
+                />
+                <item.icon 
+                  className={`
+                    w-6 h-6 mb-1.5 transition-colors duration-300
+                    ${isActive ? "text-white" : "text-white/70 group-hover:text-white"}
+                  `} 
+                />
+                <span 
+                  className={`
+                    text-[10px] font-bold uppercase tracking-wider transition-colors duration-300
+                    ${isActive ? "text-white" : "text-white/70 group-hover:text-white"}
+                  `}
+                >
+                  {item.label}
+                </span>
+              </a>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="w-full px-2">
         <button
-          onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={() => {
+            if (location !== "/") window.location.href = "/#contact";
+            else document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+          }}
           className="w-full flex flex-col items-center justify-center bg-secondary hover:bg-secondary/90 text-primary py-4 rounded-sm transition-all duration-300 group shadow-lg"
         >
           <MessageSquare className="w-6 h-6 mb-1" />
@@ -163,9 +158,11 @@ export default function Home() {
 
       {/* BRAND HEADER */}
       <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
-        <a href="#home" className="font-serif text-3xl font-bold tracking-tighter">
-          KANOHA
-        </a>
+        <Link href="/">
+          <a className="font-serif text-3xl font-bold tracking-tighter cursor-pointer">
+            KANOHA
+          </a>
+        </Link>
       </div>
 
       {/* SECTION 1: HERO */}
@@ -206,9 +203,11 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-6"
             >
-              <AuthorityButton onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}>
-                Explore Products <ArrowRight className="w-5 h-5" />
-              </AuthorityButton>
+              <Link href="/products">
+                <AuthorityButton>
+                  Explore Products <ArrowRight className="w-5 h-5" />
+                </AuthorityButton>
+              </Link>
               <AuthorityButton 
                 variant="secondary"
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
@@ -232,7 +231,7 @@ export default function Home() {
               <p className="text-xl text-muted-foreground font-medium leading-relaxed mb-8">
                 The biggest advantage of drop shipping is that you can run a business without investing thousands of dollars in inventory. Leave that to us.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {[
                   "Over 3,000 in-demand items",
                   "Fast processing & shipping",
@@ -245,6 +244,11 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+              <Link href="/services">
+                <Button variant="link" className="text-primary text-lg p-0 h-auto font-bold hover:no-underline group">
+                  View All Services <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
             <div className="lg:w-1/2 relative">
               <div className="absolute -inset-4 border-2 border-primary/20 z-0" />
@@ -258,102 +262,29 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* SECTION 3: PRODUCTS */}
-      <Section id="products" className="bg-muted/20">
+      {/* SECTION 3: EXPLORE PREVIEW (Replaces Product Grid) */}
+      <Section id="explore" className="bg-muted/20">
         <div className="container">
-          <div className="text-center mb-16">
-            <span className="text-sm font-bold tracking-widest uppercase text-primary mb-4 block">Our Inventory</span>
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-foreground">
-              High-demand categories.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {[
-              { name: "Consumer Electronics", img: "/images/products/product_dvd_player.webp" },
-              { name: "Audio Systems", img: "/images/products/product_pa_system.webp" },
-              { name: "Gaming Accessories", img: "/images/products/product_switch_kit.webp" },
-              { name: "Portable Audio", img: "/images/products/product_speaker_yellow.webp" }
-            ].map((cat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative aspect-square bg-white overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={cat.img} 
-                  alt={cat.name} 
-                  className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl uppercase tracking-widest border-b-2 border-secondary pb-1">
-                    {cat.name}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
-            {[
-              "Air Fryers", "Kitchen Gadgets", "Dinnerware", "Car Audio", 
-              "Home Theater", "Headphones", "Personal Care", "Wall Mounts",
-              "Smart Home", "Office Supplies", "Outdoor Gear", "Kids Electronics"
-            ].map((tag, i) => (
-              <div key={i} className="bg-background border border-border py-3 px-2 text-sm font-bold text-muted-foreground hover:text-primary hover:border-primary transition-colors cursor-default">
-                {tag}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 4: SERVICES */}
-      <Section id="services" className="bg-primary text-primary-foreground">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="lg:w-1/3">
-              <span className="text-9xl font-serif text-white/10 font-bold absolute -mt-20 -ml-10">04</span>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 leading-tight relative z-10">
-                Comprehensive Distribution Services.
-              </h2>
-              <p className="text-xl text-primary-foreground/80 font-medium leading-relaxed">
-                We are dedicated to providing you with an opportunity to expand or start your business by utilizing our incredible selection.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-background p-12 border border-border hover:border-primary transition-colors duration-300 group cursor-pointer" onClick={() => window.location.href='/products'}>
+              <Package className="w-16 h-16 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+              <h2 className="text-4xl font-serif font-bold mb-6">Our Products</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Browse our extensive catalog of consumer electronics, home goods, and more.
               </p>
+              <span className="text-primary font-bold uppercase tracking-widest flex items-center gap-2">
+                View Catalog <ArrowRight className="w-4 h-4" />
+              </span>
             </div>
-
-            <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-12">
-              {[
-                {
-                  title: "Drop Shipping",
-                  desc: "Ship directly to your customers without holding inventory. We handle the logistics.",
-                  icon: Truck
-                },
-                {
-                  title: "Wholesale Distribution",
-                  desc: "Bulk purchasing options for retailers looking to stock their own shelves.",
-                  icon: Package
-                },
-                {
-                  title: "Fulfillment Services",
-                  desc: "Let us handle the picking, packing, and shipping of your orders.",
-                  icon: ShoppingBag
-                },
-                {
-                  title: "Customer Support",
-                  desc: "Dedicated team available Mon-Fri 9am-5pm PST to assist you.",
-                  icon: Headphones
-                }
-              ].map((service, i) => (
-                <div key={i} className="border-l-2 border-secondary pl-8">
-                  <service.icon className="w-10 h-10 text-secondary mb-6" />
-                  <h3 className="text-2xl font-serif font-bold mb-4">{service.title}</h3>
-                  <p className="text-lg text-primary-foreground/70">{service.desc}</p>
-                </div>
-              ))}
+            <div className="bg-background p-12 border border-border hover:border-primary transition-colors duration-300 group cursor-pointer" onClick={() => window.location.href='/services'}>
+              <Truck className="w-16 h-16 text-secondary mb-8 group-hover:scale-110 transition-transform" />
+              <h2 className="text-4xl font-serif font-bold mb-6">Our Services</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Discover how we support your business with dropshipping, wholesale, and fulfillment.
+              </p>
+              <span className="text-primary font-bold uppercase tracking-widest flex items-center gap-2">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </span>
             </div>
           </div>
         </div>
