@@ -31,7 +31,7 @@ export default function FreightForwarding() {
           <div className="relative">
             <div className="absolute -inset-4 border-2 border-primary/20 z-0" />
             <img 
-              src="/images/services/service_freight_forwarding.webp" 
+              src="/images/services/service_freight_forwarding_vivid.jpg" 
               alt="Freight Forwarding" 
               className="w-full relative z-10 shadow-2xl"
             />

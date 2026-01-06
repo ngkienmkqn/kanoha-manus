@@ -5,6 +5,11 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Policy from "./pages/Policy";
+import Member from "./pages/Member";
+import Layout from "./components/Layout";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import FreightForwarding from "./pages/FreightForwarding";
@@ -13,16 +18,22 @@ import EntrustedImport from "./pages/EntrustedImport";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/products"} component={Products} />
-      <Route path={"/services"} component={Services} />
-      <Route path={"/services/freight-forwarding"} component={FreightForwarding} />
-      <Route path={"/services/entrusted-import"} component={EntrustedImport} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <Layout>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/about"} component={About} />
+        <Route path={"/contact"} component={Contact} />
+        <Route path={"/policy"} component={Policy} />
+        <Route path={"/member"} component={Member} />
+        <Route path={"/products"} component={Products} />
+        <Route path={"/services"} component={Services} />
+        <Route path={"/services/freight-forwarding"} component={FreightForwarding} />
+        <Route path={"/services/entrusted-import"} component={EntrustedImport} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
   );
 }
 
