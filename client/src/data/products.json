@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "DVD Player",
+    "price": "$45.00",
+    "category": "Consumer Electronics",
+    "img": "/images/products/product_dvd_player.webp",
+    "description": "High-definition DVD player with HDMI output and USB playback support.",
+    "features": ["1080p Upscaling", "USB Media Playback", "Compact Design"]
+  },
+  {
+    "id": "2",
+    "name": "PA System",
+    "price": "$120.00",
+    "category": "Audio Systems",
+    "img": "/images/products/product_pa_system.webp",
+    "description": "Professional portable PA system with wireless microphone and Bluetooth connectivity.",
+    "features": ["2000W Peak Power", "Bluetooth 5.0", "Wireless Mic Included"]
+  },
+  {
+    "id": "3",
+    "name": "Switch Kit",
+    "price": "$25.00",
+    "category": "Gaming & Accessories",
+    "img": "/images/products/product_switch_kit.webp",
+    "description": "Complete accessory kit for Nintendo Switch including case, screen protector, and grips.",
+    "features": ["Hard Shell Case", "Tempered Glass", "Joy-Con Grips"]
+  },
+  {
+    "id": "4",
+    "name": "Yellow Speaker",
+    "price": "$35.00",
+    "category": "Portable Audio",
+    "img": "/images/products/product_speaker_yellow.webp",
+    "description": "Rugged waterproof Bluetooth speaker with 24-hour battery life.",
+    "features": ["IPX7 Waterproof", "24h Battery", "360° Sound"]
+  }
+]

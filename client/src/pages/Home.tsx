@@ -244,11 +244,27 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link href="/services">
-                <Button variant="link" className="text-primary text-lg p-0 h-auto font-bold hover:no-underline group">
-                  View All Services <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+              
+              <div className="flex flex-col gap-4 mt-8">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Specialized Services</h3>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/services/freight-forwarding">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                      Freight Forwarding
+                    </Button>
+                  </Link>
+                  <Link href="/services/entrusted-import">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                      Entrusted Import
+                    </Button>
+                  </Link>
+                </div>
+                <Link href="/services">
+                  <Button variant="link" className="text-primary text-lg p-0 h-auto font-bold hover:no-underline group mt-4">
+                    View All Services <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="lg:w-1/2 relative">
               <div className="absolute -inset-4 border-2 border-primary/20 z-0" />
