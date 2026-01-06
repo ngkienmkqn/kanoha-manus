@@ -111,9 +111,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <CommandNavigation />
       
       {/* BRAND HEADER */}
-      <div className="fixed top-8 left-8 z-50 mix-blend-difference text-white">
+      <div className="fixed top-8 left-8 z-50">
         <Link href="/">
-          <a className="font-serif text-3xl font-bold tracking-tighter cursor-pointer">
+          <a className="font-serif text-3xl font-bold tracking-tighter cursor-pointer text-black">
             KANOHA
           </a>
         </Link>

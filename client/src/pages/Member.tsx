@@ -76,7 +76,15 @@ export default function Member() {
                 </select>
               </div>
               
-              <Button className="w-full text-lg py-6 mt-4">Submit Application</Button>
+              <Button 
+                className="w-full text-lg py-6 mt-4"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("Application submitted successfully! We will contact you shortly.");
+                }}
+              >
+                Submit Application
+              </Button>
               <p className="text-xs text-center text-muted-foreground mt-4">
                 By submitting, you agree to our Terms of Service and Privacy Policy.
               </p>

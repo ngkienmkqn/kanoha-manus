@@ -86,7 +86,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
         </motion.div>
 
-        <div className="container relative z-10 pt-20">
+        <div className="container relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
@@ -290,9 +290,11 @@ export default function Home() {
             </div>
             
             <div className="mt-12 pt-12 border-t border-border">
-              <AuthorityButton className="w-full text-xl py-8">
-                Become a Member
-              </AuthorityButton>
+              <Link href="/member">
+                <AuthorityButton className="w-full text-xl py-8">
+                  Become a Member
+                </AuthorityButton>
+              </Link>
             </div>
           </div>
         </div>
