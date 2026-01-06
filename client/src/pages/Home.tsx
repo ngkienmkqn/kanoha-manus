@@ -267,7 +267,7 @@ export default function Home() {
                 <div className="space-y-4 text-lg font-medium text-foreground">
                   <p className="flex items-center gap-4">
                     <MessageSquare className="w-5 h-5 text-secondary" />
-                    (800) 788 7618
+                    +8617170491555
                   </p>
                   <p className="flex items-center gap-4">
                     <Globe className="w-5 h-5 text-secondary" />

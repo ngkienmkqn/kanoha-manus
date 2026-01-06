@@ -33,7 +33,7 @@ export default function Contact() {
                 <Phone className="w-6 h-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">Phone</h3>
-                  <p className="text-muted-foreground">(800) 788 7618</p>
+                  <p className="text-muted-foreground">+8617170491555</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
