@@ -10,7 +10,8 @@ import {
   FileText,
   Users,
   Menu,
-  X
+  X,
+  Phone
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -109,7 +110,12 @@ const CommandNavigation = () => {
     </nav>
 
     {/* Mobile Navigation */}
-    <div className="fixed top-6 right-6 z-[100] lg:hidden">
+    <div className="fixed top-6 right-6 z-[100] lg:hidden flex gap-3">
+      <a href="tel:+8617170491555">
+        <button className="bg-green-600 text-white p-3 rounded-full shadow-2xl hover:bg-green-700 transition-colors border border-white/20 animate-pulse">
+          <Phone className="w-6 h-6" />
+        </button>
+      </a>
       <Sheet>
         <SheetTrigger asChild>
           <button className="bg-[#0B1120] text-white p-3 rounded-full shadow-2xl hover:bg-[#0B1120]/90 transition-colors border border-white/20">

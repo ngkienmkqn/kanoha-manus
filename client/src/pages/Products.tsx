@@ -1,10 +1,14 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Package, ArrowRight, Search, X, Filter, ChevronLeft, ChevronRight } from "lucide-react";
+import { Package, ArrowRight, Search, X, Filter, ChevronLeft, ChevronRight, ShoppingCart, Plus, Minus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import productData from "@/data/products.json";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 // Mock Data Structure (Fallback if JSON is empty initially)
 interface Product {
@@ -25,6 +29,31 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { items, addToCart, removeFromCart, updateQuantity, clearCart, itemCount } = useCart();
+
+  // Form State
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const handleSubmitInquiry = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      toast.success("Inquiry submitted successfully! We will contact you shortly.");
+      clearCart();
+      setIsCartOpen(false);
+      setIsSubmitting(false);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    }, 1500);
+  };
 
   useEffect(() => {
     // Load data from JSON
@@ -65,13 +94,31 @@ export default function Products() {
     <div className="min-h-screen bg-background text-foreground font-sans pt-20 lg:pr-[88px]">
       {/* Header */}
       <div className="container py-16">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="h-px w-12 bg-primary" />
-          <span className="text-primary font-bold tracking-widest uppercase">Our Inventory</span>
+        <div className="flex justify-between items-start">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-primary font-bold tracking-widest uppercase">Our Inventory</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-serif font-bold text-foreground mb-8">
+              World-Class Products.
+            </h1>
+          </div>
+          
+          {/* Cart Button */}
+          <Button 
+            onClick={() => setIsCartOpen(true)}
+            className="relative bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-6 rounded-none shadow-lg"
+          >
+            <ShoppingCart className="w-6 h-6 mr-2" />
+            <span className="font-bold uppercase tracking-wider">Inquiry List</span>
+            {itemCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-secondary text-primary w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs border-2 border-background">
+                {itemCount}
+              </span>
+            )}
+          </Button>
         </div>
-        <h1 className="text-6xl md:text-7xl font-serif font-bold text-foreground mb-8">
-          World-Class Products.
-        </h1>
         
         {/* Search and Filter Bar */}
         <div className="flex flex-col md:flex-row gap-6 mt-12 p-6 bg-muted/20 border border-border rounded-lg">
@@ -228,8 +275,14 @@ export default function Products() {
                 )}
 
                 <div className="mt-auto pt-6 border-t border-border">
-                  <Button className="w-full text-lg py-6">
-                    Request Quote
+                  <Button 
+                    className="w-full text-lg py-6 font-bold uppercase tracking-wider"
+                    onClick={() => {
+                      addToCart(selectedProduct);
+                      setSelectedProduct(null);
+                    }}
+                  >
+                    Add to Inquiry List
                   </Button>
                 </div>
               </div>
@@ -245,11 +298,137 @@ export default function Products() {
           <p className="text-xl opacity-80 mb-8 max-w-2xl mx-auto">
             Join thousands of successful retailers who trust Kanoha for their inventory needs.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-6" onClick={() => window.location.href='/member'}>
             Start Dropshipping Today
           </Button>
         </div>
       </div>
+
+      {/* Inquiry Cart Dialog */}
+      <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
+        <DialogContent className="max-w-4xl bg-background border-border p-0 overflow-hidden flex flex-col md:flex-row h-[90vh] md:h-[600px]">
+          {/* Cart Items Section */}
+          <div className="flex-1 p-6 md:p-8 overflow-y-auto border-b md:border-b-0 md:border-r border-border bg-muted/10">
+            <DialogHeader className="mb-6">
+              <DialogTitle className="text-2xl font-serif font-bold">Your Inquiry List</DialogTitle>
+              <DialogDescription>Review items before submitting your quote request.</DialogDescription>
+            </DialogHeader>
+
+            {items.length === 0 ? (
+              <div className="flex flex-col items-center justify-center h-64 text-muted-foreground">
+                <ShoppingCart className="w-12 h-12 mb-4 opacity-20" />
+                <p>Your list is empty.</p>
+                <Button variant="link" onClick={() => setIsCartOpen(false)} className="mt-2">
+                  Browse Products
+                </Button>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {items.map((item) => (
+                  <div key={item.id} className="flex gap-4 bg-background p-4 rounded-lg border border-border shadow-sm">
+                    <div className="w-20 h-20 bg-white rounded-md overflow-hidden flex-shrink-0 border border-border">
+                      <img src={item.img} alt={item.name} className="w-full h-full object-contain" />
+                    </div>
+                    <div className="flex-1 flex flex-col justify-between">
+                      <h4 className="font-bold line-clamp-1">{item.name}</h4>
+                      <div className="flex items-center justify-between mt-2">
+                        <div className="flex items-center gap-3 bg-muted/30 rounded-md p-1">
+                          <button 
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            className="w-6 h-6 flex items-center justify-center hover:bg-background rounded-sm transition-colors"
+                            disabled={item.quantity <= 1}
+                          >
+                            <Minus className="w-3 h-3" />
+                          </button>
+                          <span className="text-sm font-bold w-4 text-center">{item.quantity}</span>
+                          <button 
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            className="w-6 h-6 flex items-center justify-center hover:bg-background rounded-sm transition-colors"
+                          >
+                            <Plus className="w-3 h-3" />
+                          </button>
+                        </div>
+                        <button 
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-destructive hover:bg-destructive/10 p-2 rounded-md transition-colors"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Checkout Form Section */}
+          <div className="w-full md:w-[400px] p-6 md:p-8 bg-background flex flex-col">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-1">Contact Details</h3>
+              <p className="text-sm text-muted-foreground">Where should we send the quote?</p>
+            </div>
+
+            <form onSubmit={handleSubmitInquiry} className="space-y-4 flex-1 flex flex-col">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input 
+                  id="name" 
+                  required 
+                  placeholder="John Doe" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email Address</Label>
+                <Input 
+                  id="email" 
+                  type="email" 
+                  required 
+                  placeholder="john@company.com" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input 
+                  id="phone" 
+                  type="tel" 
+                  required 
+                  placeholder="+1 (555) 000-0000" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Additional Notes (Optional)</Label>
+                <Textarea 
+                  id="message" 
+                  placeholder="Any specific requirements?" 
+                  className="resize-none h-24"
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                />
+              </div>
+
+              <div className="mt-auto pt-4">
+                <Button 
+                  type="submit" 
+                  className="w-full py-6 text-lg font-bold uppercase tracking-wider"
+                  disabled={items.length === 0 || isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Submit Request"}
+                </Button>
+                <p className="text-xs text-center text-muted-foreground mt-4">
+                  By submitting, you agree to our Terms of Service and Privacy Policy.
+                </p>
+              </div>
+            </form>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
