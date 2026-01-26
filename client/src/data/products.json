@@ -7198,5 +7198,18 @@
       "Authentic",
       "Fast Shipping"
     ]
+  },
+  {
+    "id": "1999",
+    "name": "X-ray Fluorescence – XRF",
+    "price": "Contact for Price",
+    "category": "Industrial Equipment",
+    "img": "/images/products/xrf_analyzer.jpg",
+    "description": "High-quality X-ray Fluorescence – XRF analyzer for elemental analysis.",
+    "features": [
+      "Authentic",
+      "Fast Shipping",
+      "High Precision"
+    ]
   }
 ]
