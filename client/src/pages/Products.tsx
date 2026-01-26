@@ -44,7 +44,7 @@ export default function Products() {
   const handleSubmitInquiry = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       toast.success("Inquiry submitted successfully! We will contact you shortly.");
@@ -59,7 +59,7 @@ export default function Products() {
     // Load data from JSON
     // In a real app, this might be an API call
     if (Array.isArray(productData) && productData.length > 0) {
-        setProducts(productData);
+      setProducts(productData);
     }
   }, []);
 
@@ -71,8 +71,8 @@ export default function Products() {
 
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                            product.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
@@ -104,9 +104,9 @@ export default function Products() {
               World-Class Products.
             </h1>
           </div>
-          
+
           {/* Cart Button */}
-          <Button 
+          <Button
             onClick={() => setIsCartOpen(true)}
             className="relative bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-6 rounded-none shadow-lg"
           >
@@ -119,13 +119,13 @@ export default function Products() {
             )}
           </Button>
         </div>
-        
+
         {/* Search and Filter Bar */}
         <div className="flex flex-col md:flex-row gap-6 mt-12 p-6 bg-muted/20 border border-border rounded-lg">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-            <Input 
-              placeholder="Search products..." 
+            <Input
+              placeholder="Search products..."
               className="pl-10 bg-background border-border h-12 text-lg"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -138,8 +138,8 @@ export default function Products() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`
                   px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap transition-all
-                  ${selectedCategory === cat 
-                    ? "bg-primary text-primary-foreground shadow-md" 
+                  ${selectedCategory === cat
+                    ? "bg-primary text-primary-foreground shadow-md"
                     : "bg-background border border-border hover:border-primary text-muted-foreground hover:text-foreground"}
                 `}
               >
@@ -157,7 +157,7 @@ export default function Products() {
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 {paginatedProducts.map((product) => (
-                  <motion.div 
+                  <motion.div
                     key={product.id}
                     layout
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -165,12 +165,12 @@ export default function Products() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3 }}
                     className="group bg-background border border-border overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col h-full"
-                    onClick={() => setSelectedProduct(product)}
+                    onClick={() => setLocation(`/product/${product.id}`)}
                   >
                     <div className="aspect-square relative overflow-hidden bg-white p-8 flex items-center justify-center">
-                      <img 
-                        src={product.img} 
-                        alt={product.name} 
+                      <img
+                        src={product.img}
+                        alt={product.name}
                         loading="lazy"
                         className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => { (e.target as HTMLImageElement).src = "/images/products/placeholder.webp"; }}
@@ -183,7 +183,7 @@ export default function Products() {
                       <div className="flex justify-between items-start mb-2">
                         <span className="text-xs font-bold text-primary uppercase tracking-wider">{product.category}</span>
                         {product.price && product.price !== "Contact for Price" && (
-                            <span className="text-sm font-bold text-foreground">{product.price}</span>
+                          <span className="text-sm font-bold text-foreground">{product.price}</span>
                         )}
                       </div>
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">{product.name}</h3>
@@ -199,8 +199,8 @@ export default function Products() {
               {/* Pagination Controls */}
               {totalPages > 1 && (
                 <div className="flex justify-center items-center gap-4">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
                   >
@@ -209,8 +209,8 @@ export default function Products() {
                   <span className="text-sm font-bold text-muted-foreground">
                     Page {currentPage} of {totalPages}
                   </span>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
                   >
@@ -226,8 +226,8 @@ export default function Products() {
               </div>
               <h3 className="text-xl font-bold mb-2">No products found</h3>
               <p className="text-muted-foreground">Try adjusting your search or category filter.</p>
-              <Button 
-                variant="link" 
+              <Button
+                variant="link"
                 onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
                 className="mt-4 text-primary"
               >
@@ -244,9 +244,9 @@ export default function Products() {
           {selectedProduct && (
             <div className="flex flex-col md:flex-row h-full max-h-[80vh] overflow-y-auto md:overflow-hidden">
               <div className="md:w-1/2 bg-white p-12 flex items-center justify-center border-r border-border min-h-[300px]">
-                <img 
-                  src={selectedProduct.img} 
-                  alt={selectedProduct.name} 
+                <img
+                  src={selectedProduct.img}
+                  alt={selectedProduct.name}
                   className="max-w-full max-h-[300px] object-contain"
                   onError={(e) => { (e.target as HTMLImageElement).src = "/images/products/placeholder.webp"; }}
                 />
@@ -259,23 +259,23 @@ export default function Products() {
                 <DialogDescription className="text-lg text-foreground/80 mb-6">
                   {selectedProduct.description}
                 </DialogDescription>
-                
+
                 {selectedProduct.features && selectedProduct.features.length > 0 && (
-                    <div className="mb-8">
+                  <div className="mb-8">
                     <h4 className="font-bold mb-3 uppercase text-sm tracking-wide text-muted-foreground">Key Features</h4>
                     <ul className="space-y-2">
-                        {selectedProduct.features.map((feature, i) => (
+                      {selectedProduct.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-secondary rounded-full" />
-                            {feature}
+                          <div className="w-1.5 h-1.5 bg-secondary rounded-full" />
+                          {feature}
                         </li>
-                        ))}
+                      ))}
                     </ul>
-                    </div>
+                  </div>
                 )}
 
                 <div className="mt-auto pt-6 border-t border-border">
-                  <Button 
+                  <Button
                     className="w-full text-lg py-6 font-bold uppercase tracking-wider"
                     onClick={() => {
                       addToCart(selectedProduct);
@@ -298,7 +298,7 @@ export default function Products() {
           <p className="text-xl opacity-80 mb-8 max-w-2xl mx-auto">
             Join thousands of successful retailers who trust Kanoha for their inventory needs.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6" onClick={() => window.location.href='/member'}>
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-6" onClick={() => window.location.href = '/member'}>
             Start Dropshipping Today
           </Button>
         </div>
@@ -333,7 +333,7 @@ export default function Products() {
                       <h4 className="font-bold line-clamp-1">{item.name}</h4>
                       <div className="flex items-center justify-between mt-2">
                         <div className="flex items-center gap-3 bg-muted/30 rounded-md p-1">
-                          <button 
+                          <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                             className="w-6 h-6 flex items-center justify-center hover:bg-background rounded-sm transition-colors"
                             disabled={item.quantity <= 1}
@@ -341,14 +341,14 @@ export default function Products() {
                             <Minus className="w-3 h-3" />
                           </button>
                           <span className="text-sm font-bold w-4 text-center">{item.quantity}</span>
-                          <button 
+                          <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                             className="w-6 h-6 flex items-center justify-center hover:bg-background rounded-sm transition-colors"
                           >
                             <Plus className="w-3 h-3" />
                           </button>
                         </div>
-                        <button 
+                        <button
                           onClick={() => removeFromCart(item.id)}
                           className="text-destructive hover:bg-destructive/10 p-2 rounded-md transition-colors"
                         >
@@ -372,50 +372,50 @@ export default function Products() {
             <form onSubmit={handleSubmitInquiry} className="space-y-4 flex-1 flex flex-col">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input 
-                  id="name" 
-                  required 
-                  placeholder="John Doe" 
+                <Input
+                  id="name"
+                  required
+                  placeholder="John Doe"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  required 
-                  placeholder="john@company.com" 
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="john@company.com"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
-                  required 
-                  placeholder="+1 (555) 000-0000" 
+                <Input
+                  id="phone"
+                  type="tel"
+                  required
+                  placeholder="+1 (555) 000-0000"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Additional Notes (Optional)</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Any specific requirements?" 
+                <Textarea
+                  id="message"
+                  placeholder="Any specific requirements?"
                   className="resize-none h-24"
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
 
               <div className="mt-auto pt-4">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full py-6 text-lg font-bold uppercase tracking-wider"
                   disabled={items.length === 0 || isSubmitting}
                 >

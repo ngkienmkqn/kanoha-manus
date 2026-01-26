@@ -15,6 +15,7 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import FreightForwarding from "./pages/FreightForwarding";
 import EntrustedImport from "./pages/EntrustedImport";
+import ProductDetail from "./pages/ProductDetail";
 
 
 function Router() {
@@ -30,6 +31,7 @@ function Router() {
         <Route path={"/services"} component={Services} />
         <Route path={"/services/freight-forwarding"} component={FreightForwarding} />
         <Route path={"/services/entrusted-import"} component={EntrustedImport} />
+        <Route path={"/product/:id"} component={ProductDetail} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
@@ -48,7 +50,7 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider
         defaultTheme="light"
-        // switchable
+      // switchable
       >
         <CartProvider>
           <TooltipProvider>
