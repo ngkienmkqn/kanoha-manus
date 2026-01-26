@@ -21,9 +21,12 @@ interface Product {
   features: string[];
 }
 
+import { useLocation } from "wouter";
+
 const ITEMS_PER_PAGE = 12;
 
 export default function Products() {
+  const [, setLocation] = useLocation();
   const [products, setProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
