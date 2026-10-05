@@ -5,6 +5,7 @@ export interface CartItem {
   id: string;
   name: string;
   img: string;
+  category?: string;
   quantity: number;
 }
 
@@ -55,6 +56,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         id: product.id, 
         name: product.name, 
         img: product.img, 
+        category: product.category,
         quantity: 1 
       }];
     });

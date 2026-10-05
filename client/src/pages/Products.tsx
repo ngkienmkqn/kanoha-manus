@@ -1,12 +1,12 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Package, ArrowRight, Search, X, Filter, ChevronLeft, ChevronRight, ShoppingCart, Plus, Minus, Trash2 } from "lucide-react";
+import { Package, ArrowRight, Search, X, Filter, ChevronLeft, ChevronRight, ShoppingCart, Plus, Minus, Trash2, Shirt } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { allProducts as productData } from "@/data/catalog";
+import { allProducts as productData, APPAREL, apparelCategories, isApparelCategory } from "@/data/catalog";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 
@@ -21,15 +21,19 @@ interface Product {
   features: string[];
 }
 
-import { useLocation } from "wouter";
+import { useLocation, useSearch } from "wouter";
 
 const ITEMS_PER_PAGE = 12;
 
 export default function Products() {
   const [, setLocation] = useLocation();
+  const search = useSearch();
   const [products, setProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  // Category lives in the URL (?category=...) so nav links can open a department directly
+  const selectedCategory = new URLSearchParams(search).get("category") || "All";
+  const setSelectedCategory = (cat: string) =>
+    setLocation(cat === "All" ? "/products" : `/products?category=${encodeURIComponent(cat)}`, { replace: true });
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -66,17 +70,27 @@ export default function Products() {
     }
   }, []);
 
-  // Extract unique categories dynamically
-  const categories = useMemo(() => {
-    const cats = new Set(products.map(p => p.category));
-    return ["All", ...Array.from(cats).sort()];
+  // Extract unique categories dynamically; apparel categories are grouped under one department
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const p of products) counts[p.category] = (counts[p.category] || 0) + 1;
+    return counts;
   }, [products]);
+
+  const otherCategories = useMemo(
+    () => Object.keys(categoryCounts).filter(c => !isApparelCategory(c)).sort(),
+    [categoryCounts]
+  );
+
+  const apparelCount = apparelCategories.reduce((sum, c) => sum + (categoryCounts[c] || 0), 0);
+  const showApparelRow = isApparelCategory(selectedCategory);
 
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+      const matchesCategory = selectedCategory === "All" ||
+        (selectedCategory === APPAREL ? isApparelCategory(product.category) : product.category === selectedCategory);
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, selectedCategory, products]);
@@ -97,7 +111,7 @@ export default function Products() {
     <div className="min-h-screen bg-background text-foreground font-sans pt-20 lg:pr-[88px]">
       {/* Header */}
       <div className="container py-16">
-        <div className="flex justify-between items-start">
+        <div className="flex flex-wrap justify-between items-start gap-x-6 gap-y-2">
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
@@ -124,8 +138,8 @@ export default function Products() {
         </div>
 
         {/* Search and Filter Bar */}
-        <div className="flex flex-col md:flex-row gap-6 mt-12 p-6 bg-muted/20 border border-border rounded-lg">
-          <div className="relative flex-1">
+        <div className="mt-12 p-4 md:p-6 bg-muted/20 border border-border rounded-lg space-y-4">
+          <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
             <Input
               placeholder="Search products..."
@@ -134,22 +148,51 @@ export default function Products() {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar max-w-full md:max-w-[60%]">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`
-                  px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap transition-all
-                  ${selectedCategory === cat
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-background border border-border hover:border-primary text-muted-foreground hover:text-foreground"}
-                `}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="flex flex-wrap gap-2">
+            {["All", APPAREL, ...otherCategories].map((cat) => {
+              const isApparel = cat === APPAREL;
+              const active = isApparel ? showApparelRow : selectedCategory === cat;
+              const count = cat === "All" ? products.length : isApparel ? apparelCount : categoryCounts[cat];
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`
+                    inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all
+                    ${active
+                      ? "bg-primary text-primary-foreground shadow-md"
+                      : isApparel
+                        ? "bg-background border-2 border-primary text-primary hover:bg-primary/5"
+                        : "bg-background border border-border hover:border-primary text-muted-foreground hover:text-foreground"}
+                  `}
+                >
+                  {isApparel && <Shirt className="w-4 h-4" />}
+                  {cat}
+                  <span className={`text-xs font-semibold ${active ? "opacity-80" : "opacity-60"}`}>{count}</span>
+                </button>
+              );
+            })}
           </div>
+          {showApparelRow && (
+            <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border">
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mr-1">Apparel</span>
+              {[APPAREL, ...apparelCategories].map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`
+                    inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all
+                    ${selectedCategory === cat
+                      ? "bg-secondary text-primary shadow-sm"
+                      : "bg-background border border-border hover:border-primary text-muted-foreground hover:text-foreground"}
+                  `}
+                >
+                  {cat === APPAREL ? "All Apparel" : cat}
+                  <span className="text-xs opacity-60">{cat === APPAREL ? apparelCount : categoryCounts[cat]}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
