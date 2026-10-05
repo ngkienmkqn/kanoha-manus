@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import productData from "@/data/products.json";
+import { allProducts as productData } from "@/data/catalog";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 

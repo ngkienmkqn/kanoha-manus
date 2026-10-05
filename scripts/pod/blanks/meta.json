@@ -1,0 +1,1850 @@
+{
+ "71": {
+  "title": "Unisex Staple T-Shirt | Bella + Canvas 3001",
+  "type": "Bella + Canvas 3001 | Unisex Jersey Short Sleeve Tee",
+  "colors": {
+   "Aqua": {
+    "code": "#008db5",
+    "img": "https://files.cdn.printful.com/products/71/4021_1752236278.jpg"
+   },
+   "Army": {
+    "code": "#5f5849",
+    "img": "https://files.cdn.printful.com/products/71/8440_1752236278.jpg"
+   },
+   "Ash": {
+    "code": "#f0f1ea",
+    "img": "https://files.cdn.printful.com/products/71/4026_1752236278.jpg"
+   },
+   "Asphalt": {
+    "code": "#52514f",
+    "img": "https://files.cdn.printful.com/products/71/4031_1752236278.jpg"
+   },
+   "Athletic Heather": {
+    "code": "#cececc",
+    "img": "https://files.cdn.printful.com/products/71/6948_1752236278.jpg"
+   },
+   "Autumn": {
+    "code": "#c85313",
+    "img": "https://files.cdn.printful.com/products/71/10383_1752236278.jpg"
+   },
+   "Baby Blue": {
+    "code": "#c7d7ef",
+    "img": "https://files.cdn.printful.com/products/71/4036_1752236278.jpg"
+   },
+   "Berry": {
+    "code": "#c02773",
+    "img": "https://files.cdn.printful.com/products/71/4041_1752236278.jpg"
+   },
+   "Black": {
+    "code": "#0c0c0c",
+    "img": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg"
+   },
+   "Black Heather": {
+    "code": "#0b0b0b",
+    "img": "https://files.cdn.printful.com/products/71/8923_1752236278.jpg"
+   },
+   "Brown": {
+    "code": "#322622",
+    "img": "https://files.cdn.printful.com/products/71/4046_1752236278.jpg"
+   },
+   "Burnt Orange": {
+    "code": "#ed8043",
+    "img": "https://files.cdn.printful.com/products/71/4051_1752236278.jpg"
+   },
+   "Cardinal": {
+    "code": "#890c1e",
+    "img": "https://files.cdn.printful.com/products/71/4061_1752236278.jpg"
+   },
+   "Charity Pink": {
+    "code": "#FF6284",
+    "img": "https://files.cdn.printful.com/products/71/21569_1752236278.jpg"
+   },
+   "Dark Grey": {
+    "code": "#2A2929",
+    "img": "https://files.cdn.printful.com/products/71/21577_1752236279.jpg"
+   },
+   "Dark Grey Heather": {
+    "code": "#3E3C3D",
+    "img": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg"
+   },
+   "Forest": {
+    "code": "#223e25",
+    "img": "https://files.cdn.printful.com/products/71/8451_1752236278.jpg"
+   },
+   "Gold": {
+    "code": "#ff9e00",
+    "img": "https://files.cdn.printful.com/products/71/4081_1752236278.jpg"
+   },
+   "Heather Aqua": {
+    "code": "#27a8c8",
+    "img": "https://files.cdn.printful.com/products/71/22022_1752236278.jpg"
+   },
+   "Heather Autumn": {
+    "code": "#D5743F",
+    "img": "https://files.cdn.printful.com/products/71/24358_1752236280.jpg"
+   },
+   "Heather Brown": {
+    "code": "#6A513A",
+    "img": "https://files.cdn.printful.com/products/71/24330_1752236282.jpg"
+   },
+   "Heather Carolina Blue": {
+    "code": "#ABC3EF",
+    "img": "https://files.cdn.printful.com/products/71/24310_1752236283.jpg"
+   },
+   "Heather Clay": {
+    "code": "#994836",
+    "img": "https://files.cdn.printful.com/products/71/22031_1752236282.jpg"
+   },
+   "Heather Columbia Blue": {
+    "code": "#7D95E8",
+    "img": "https://files.cdn.printful.com/products/71/21585_1752236280.jpg"
+   },
+   "Heather Deep Teal": {
+    "code": "#447085",
+    "img": "https://files.cdn.printful.com/products/71/8481_1752236280.jpg"
+   },
+   "Heather Dust": {
+    "code": "#e5d9c9",
+    "img": "https://files.cdn.printful.com/products/71/10359_1752236280.jpg"
+   },
+   "Heather Emerald": {
+    "code": "#1E2C1C",
+    "img": "https://files.cdn.printful.com/products/71/24337_1752236283.jpg"
+   },
+   "Heather Forest": {
+    "code": "#425040",
+    "img": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg"
+   },
+   "Heather Grass Green": {
+    "code": "#477749",
+    "img": "https://files.cdn.printful.com/products/71/24344_1752236282.jpg"
+   },
+   "Heather Ice Blue": {
+    "code": "#e8fdff",
+    "img": "https://files.cdn.printful.com/products/71/21309_1752236280.jpg"
+   },
+   "Heather Kelly": {
+    "code": "#00a263",
+    "img": "https://files.cdn.printful.com/products/71/18642_1752236280.jpg"
+   },
+   "Heather Mauve": {
+    "code": "#B2736F",
+    "img": "https://files.cdn.printful.com/products/71/18634_1752236280.jpg"
+   },
+   "Heather Midnight Navy": {
+    "code": "#302d4b",
+    "img": "https://files.cdn.printful.com/products/71/8495_1752236280.jpg"
+   },
+   "Heather Mint": {
+    "code": "#b2ebcf",
+    "img": "https://files.cdn.printful.com/products/71/8502_1752236280.jpg"
+   },
+   "Heather Natural": {
+    "code": "#F9E9CF",
+    "img": "https://files.cdn.printful.com/products/71/24365_1752236281.jpg"
+   },
+   "Heather Navy": {
+    "code": "#303643",
+    "img": "https://files.cdn.printful.com/products/71/8509_1752236280.jpg"
+   },
+   "Heather Olive": {
+    "code": "#5c5531",
+    "img": "https://files.cdn.printful.com/products/71/21301_1752236280.jpg"
+   },
+   "Heather Orange": {
+    "code": "#ff6f4e",
+    "img": "https://files.cdn.printful.com/products/71/8516_1752236280.jpg"
+   },
+   "Heather Orchid": {
+    "code": "#c2878e",
+    "img": "https://files.cdn.printful.com/products/71/10351_1752236282.jpg"
+   },
+   "Heather Prism Dusty Blue": {
+    "code": "#a5c8bc",
+    "img": "https://files.cdn.printful.com/products/71/9388_1752236281.jpg"
+   },
+   "Heather Prism Ice Blue": {
+    "code": "#c3e2e3",
+    "img": "https://files.cdn.printful.com/products/71/9360_1752236281.jpg"
+   },
+   "Heather Prism Lilac": {
+    "code": "#deafcd",
+    "img": "https://files.cdn.printful.com/products/71/9374_1752236283.jpg"
+   },
+   "Heather Prism Mint": {
+    "code": "#aad5b9",
+    "img": "https://files.cdn.printful.com/products/71/9381_1752236282.jpg"
+   },
+   "Heather Prism Peach": {
+    "code": "#f3c2b2",
+    "img": "https://files.cdn.printful.com/products/71/9367_1752236281.jpg"
+   },
+   "Heather Raspberry": {
+    "code": "#d23d62",
+    "img": "https://files.cdn.printful.com/products/71/8523_1752236283.jpg"
+   },
+   "Heather Red": {
+    "code": "#ed5359",
+    "img": "https://files.cdn.printful.com/products/71/20669_1752236283.jpg"
+   },
+   "Heather Slate": {
+    "code": "#4C626E",
+    "img": "https://files.cdn.printful.com/products/71/18618_1752236281.jpg"
+   },
+   "Heather Team Purple": {
+    "code": "#B680C1",
+    "img": "https://files.cdn.printful.com/products/71/21601_1752236281.jpg"
+   },
+   "Heather True Royal": {
+    "code": "#536ba7",
+    "img": "https://files.cdn.printful.com/products/71/8530_1752236283.jpg"
+   },
+   "Heather Yellow Gold": {
+    "code": "#FFB834",
+    "img": "https://files.cdn.printful.com/products/71/24372_1752236283.jpg"
+   },
+   "Kelly": {
+    "code": "#1a9462",
+    "img": "https://files.cdn.printful.com/products/71/4086_1752236281.jpg"
+   },
+   "Leaf": {
+    "code": "#5c9346",
+    "img": "https://files.cdn.printful.com/products/71/4091_1752236281.jpg"
+   },
+   "Light Blue": {
+    "code": "#cfd5e1",
+    "img": "https://files.cdn.printful.com/products/71/4096_1752236281.jpg"
+   },
+   "Lilac": {
+    "code": "#efbbe3",
+    "img": "https://files.cdn.printful.com/products/71/10367_1752236281.jpg"
+   },
+   "Maroon": {
+    "code": "#721d37",
+    "img": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg"
+   },
+   "Mauve": {
+    "code": "#bf6e6e",
+    "img": "https://files.cdn.printful.com/products/71/9395_1752236282.jpg"
+   },
+   "Military Green": {
+    "code": "#4d4c36",
+    "img": "https://files.cdn.printful.com/products/71/17202_1752236282.jpg"
+   },
+   "Mint": {
+    "code": "#a5f4bd",
+    "img": "https://files.cdn.printful.com/products/71/22040_1752236282.jpg"
+   },
+   "Mustard": {
+    "code": "#eda027",
+    "img": "https://files.cdn.printful.com/products/71/10375_1752236282.jpg"
+   },
+   "Natural": {
+    "code": "#fef1d1",
+    "img": "https://files.cdn.printful.com/products/71/14681_1752236282.jpg"
+   },
+   "Navy": {
+    "code": "#212642",
+    "img": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg"
+   },
+   "Ocean Blue": {
+    "code": "#a9dff6",
+    "img": "https://files.cdn.printful.com/products/71/4116_1752236282.jpg"
+   },
+   "Olive": {
+    "code": "#5b642f",
+    "img": "https://files.cdn.printful.com/products/71/4121_1752236283.jpg"
+   },
+   "Orange": {
+    "code": "#ff6f32",
+    "img": "https://files.cdn.printful.com/products/71/4126_1752236282.jpg"
+   },
+   "Oxblood Black": {
+    "code": "#2c1013",
+    "img": "https://files.cdn.printful.com/products/71/9739_1752236282.jpg"
+   },
+   "Pebble": {
+    "code": "#9a8479",
+    "img": "https://files.cdn.printful.com/products/71/4131_1752236282.jpg"
+   },
+   "Pink": {
+    "code": "#fdbfc7",
+    "img": "https://files.cdn.printful.com/products/71/4136_1752236283.jpg"
+   },
+   "Red": {
+    "code": "#d0071e",
+    "img": "https://files.cdn.printful.com/products/71/4141_1752236283.jpg"
+   },
+   "Sage": {
+    "code": "#9eab96",
+    "img": "https://files.cdn.printful.com/products/71/22049_1752236283.jpg"
+   },
+   "Silver": {
+    "code": "#e3e3dd",
+    "img": "https://files.cdn.printful.com/products/71/4146_1752236283.jpg"
+   },
+   "Soft Cream": {
+    "code": "#e7d4c0",
+    "img": "https://files.cdn.printful.com/products/71/4151_1752236283.jpg"
+   },
+   "Soft Pink": {
+    "code": "#ffd8e1",
+    "img": "https://files.cdn.printful.com/products/71/20668_1752236283.jpg"
+   },
+   "Solid White Blend": {
+    "code": "#FCFCFC",
+    "img": "https://files.cdn.printful.com/products/71/24351_1752236285.jpg"
+   },
+   "Steel Blue": {
+    "code": "#668ea7",
+    "img": "https://files.cdn.printful.com/products/71/4161_1752236284.jpg"
+   },
+   "Tan": {
+    "code": "#ddb792",
+    "img": "https://files.cdn.printful.com/products/71/14673_1752236284.jpg"
+   },
+   "Teal": {
+    "code": "#00e3cf",
+    "img": "https://files.cdn.printful.com/products/71/22058_1752236284.jpg"
+   },
+   "Team Purple": {
+    "code": "#230f46",
+    "img": "https://files.cdn.printful.com/products/71/4166_1752236284.jpg"
+   },
+   "Toast": {
+    "code": "#cf8d4c",
+    "img": "https://files.cdn.printful.com/products/71/14689_1752236284.jpg"
+   },
+   "True Royal": {
+    "code": "#01408d",
+    "img": "https://files.cdn.printful.com/products/71/4171_1752236284.jpg"
+   },
+   "Turquoise": {
+    "code": "#54d9eb",
+    "img": "https://files.cdn.printful.com/products/71/4176_1752236284.jpg"
+   },
+   "Vintage Black": {
+    "code": "#151515",
+    "img": "https://files.cdn.printful.com/products/71/21593_1752236284.jpg"
+   },
+   "Vintage White": {
+    "code": "#fcf4e8",
+    "img": "https://files.cdn.printful.com/products/71/14713_1752236284.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/71/4011_1752236284.jpg"
+   },
+   "Yellow": {
+    "code": "#ffd667",
+    "img": "https://files.cdn.printful.com/products/71/4181_1752236284.jpg"
+   }
+  }
+ },
+ "438": {
+  "title": "Unisex Classic Tee | Gildan 5000",
+  "type": "Gildan 5000 | Adult T-Shirt Heavy Cotton",
+  "colors": {
+   "Azalea": {
+    "code": "#ff98c6",
+    "img": "https://files.cdn.printful.com/products/438/15813_1785824306.jpg"
+   },
+   "Cardinal": {
+    "code": "#c21b3a",
+    "img": "https://files.cdn.printful.com/products/438/15819_1785824306.jpg"
+   },
+   "Carolina Blue": {
+    "code": "#96bbff",
+    "img": "https://files.cdn.printful.com/products/438/15825_1785824306.jpg"
+   },
+   "Charcoal": {
+    "code": "#6a6967",
+    "img": "https://files.cdn.printful.com/products/438/15831_1785824307.jpg"
+   },
+   "Dark Chocolate": {
+    "code": "#463b33",
+    "img": "https://files.cdn.printful.com/products/438/15837_1785824306.jpg"
+   },
+   "Dark Heather": {
+    "code": "#595959",
+    "img": "https://files.cdn.printful.com/products/438/15843_1785824307.jpg"
+   },
+   "Light Blue": {
+    "code": "#d9efff",
+    "img": "https://files.cdn.printful.com/products/438/15861_1785824307.jpg"
+   },
+   "Natural": {
+    "code": "#e8dacd",
+    "img": "https://files.cdn.printful.com/products/438/11556_1785824308.jpg"
+   },
+   "Purple": {
+    "code": "#48197d",
+    "img": "https://files.cdn.printful.com/products/438/15873_1785824308.jpg"
+   },
+   "Royal": {
+    "code": "#175ac7",
+    "img": "https://files.cdn.printful.com/products/438/15879_1785824308.jpg"
+   },
+   "Sand": {
+    "code": "#d6c0ab",
+    "img": "https://files.cdn.printful.com/products/438/12639_1785824308.jpg"
+   },
+   "Ash": {
+    "code": "#f3f3f3",
+    "img": "https://files.cdn.printful.com/products/438/14973_1785824306.jpg"
+   },
+   "Black": {
+    "code": "#141313",
+    "img": "https://files.cdn.printful.com/products/438/11546_1785824306.jpg"
+   },
+   "Brown Savana": {
+    "code": "#9f8971",
+    "img": "https://files.cdn.printful.com/products/438/15807_1785824306.jpg"
+   },
+   "Daisy": {
+    "code": "#ffc946",
+    "img": "https://files.cdn.printful.com/products/438/15891_1785824306.jpg"
+   },
+   "Forest Green": {
+    "code": "#1A3B23",
+    "img": "https://files.cdn.printful.com/products/438/20453_1785824307.jpg"
+   },
+   "Gold": {
+    "code": "#ffb22d",
+    "img": "https://files.cdn.printful.com/products/438/15849_1785824308.jpg"
+   },
+   "Graphite Heather": {
+    "code": "#858585",
+    "img": "https://files.cdn.printful.com/products/438/21683_1785824308.jpg"
+   },
+   "Heliconia": {
+    "code": "#E33F7A",
+    "img": "https://files.cdn.printful.com/products/438/21651_1785824307.jpg"
+   },
+   "Ice Grey": {
+    "code": "#E9DDDC",
+    "img": "https://files.cdn.printful.com/products/438/21691_1785824307.jpg"
+   },
+   "Irish Green": {
+    "code": "#00ba69",
+    "img": "https://files.cdn.printful.com/products/438/15855_1785824307.jpg"
+   },
+   "Light Pink": {
+    "code": "#ffd4d5",
+    "img": "https://files.cdn.printful.com/products/438/11551_1785824308.jpg"
+   },
+   "Lime": {
+    "code": "#A3E05A",
+    "img": "https://files.cdn.printful.com/products/438/15885_1785824308.jpg"
+   },
+   "Maroon": {
+    "code": "#47001b",
+    "img": "https://files.cdn.printful.com/products/438/12634_1785824308.jpg"
+   },
+   "Military Green": {
+    "code": "#737a5f",
+    "img": "https://files.cdn.printful.com/products/438/15867_1785824308.jpg"
+   },
+   "Navy": {
+    "code": "#1a2330",
+    "img": "https://files.cdn.printful.com/products/438/11561_1785824308.jpg"
+   },
+   "Orange": {
+    "code": "#ff5f2e",
+    "img": "https://files.cdn.printful.com/products/438/14965_1785824308.jpg"
+   },
+   "Red": {
+    "code": "#d80019",
+    "img": "https://files.cdn.printful.com/products/438/11566_1785824308.jpg"
+   },
+   "Sapphire": {
+    "code": "#007AB3",
+    "img": "https://files.cdn.printful.com/products/438/21659_1785824308.jpg"
+   },
+   "Sky": {
+    "code": "#8ee0ff",
+    "img": "https://files.cdn.printful.com/products/438/14981_1785824308.jpg"
+   },
+   "Sport Grey": {
+    "code": "#c4c0be",
+    "img": "https://files.cdn.printful.com/products/438/11571_1785824308.jpg"
+   },
+   "Tropical Blue": {
+    "code": "#00A0B3",
+    "img": "https://files.cdn.printful.com/products/438/21699_1785824308.jpg"
+   },
+   "Turf Green": {
+    "code": "#187532",
+    "img": "https://files.cdn.printful.com/products/438/21667_1785824308.jpg"
+   },
+   "White": {
+    "code": "#fffefa",
+    "img": "https://files.cdn.printful.com/products/438/11576_1785824309.jpg"
+   },
+   "Yellow Haze": {
+    "code": "#FFD99C",
+    "img": "https://files.cdn.printful.com/products/438/21675_1785824309.jpg"
+   }
+  }
+ },
+ "586": {
+  "title": "Unisex Garment-Dyed Heavyweight T-Shirt | Comfort Colors 1717",
+  "type": "Comfort Colors 1717 | Adult Ringspun Cotton Tee",
+  "colors": {
+   "Emerald": {
+    "code": "#306d6e",
+    "img": "https://files.cdn.printful.com/products/586/52258_1787742611.jpg"
+   },
+   "Neon Lemon": {
+    "code": "#efff99",
+    "img": "https://files.cdn.printful.com/products/586/52215_1787742612.jpg"
+   },
+   "Neon Pink": {
+    "code": "#ff5ea1",
+    "img": "https://files.cdn.printful.com/products/586/52236_1787742613.jpg"
+   },
+   "Sandstone": {
+    "code": "#938a6f",
+    "img": "https://files.cdn.printful.com/products/586/52280_1787742614.jpg"
+   },
+   "Wine": {
+    "code": "#816977",
+    "img": "https://files.cdn.printful.com/products/586/52281_1787742614.jpg"
+   },
+   "Bay": {
+    "code": "#b8bfab",
+    "img": "https://files.cdn.printful.com/products/586/17707_1787742610.jpg"
+   },
+   "Berry": {
+    "code": "#8e5a7b",
+    "img": "https://files.cdn.printful.com/products/586/15156_1787742610.jpg"
+   },
+   "Black": {
+    "code": "#1b1b1c",
+    "img": "https://files.cdn.printful.com/products/586/15114_1787742610.jpg"
+   },
+   "Blossom": {
+    "code": "#ffd6e1",
+    "img": "https://files.cdn.printful.com/products/586/16541_1787742610.jpg"
+   },
+   "Blue Jean": {
+    "code": "#707e8d",
+    "img": "https://files.cdn.printful.com/products/586/16511_1787742610.jpg"
+   },
+   "Blue Spruce": {
+    "code": "#4c6151",
+    "img": "https://files.cdn.printful.com/products/586/17686_1787742611.jpg"
+   },
+   "Brick": {
+    "code": "#8d4b54",
+    "img": "https://files.cdn.printful.com/products/586/15161_1787742610.jpg"
+   },
+   "Burnt orange": {
+    "code": "#FF7842",
+    "img": "https://files.cdn.printful.com/products/586/22089_1787742610.jpg"
+   },
+   "Butter": {
+    "code": "#ffe09e",
+    "img": "https://files.cdn.printful.com/products/586/15166_1787742610.jpg"
+   },
+   "Chalky Mint": {
+    "code": "#a1f2dc",
+    "img": "https://files.cdn.printful.com/products/586/21513_1787742610.jpg"
+   },
+   "Chambray": {
+    "code": "#d9f3ff",
+    "img": "https://files.cdn.printful.com/products/586/17648_1787742611.jpg"
+   },
+   "Crimson": {
+    "code": "#bb5151",
+    "img": "https://files.cdn.printful.com/products/586/16547_1787742611.jpg"
+   },
+   "Crunchberry": {
+    "code": "#ff748e",
+    "img": "https://files.cdn.printful.com/products/586/21250_1787742611.jpg"
+   },
+   "Denim": {
+    "code": "#565a67",
+    "img": "https://files.cdn.printful.com/products/586/21520_1787742611.jpg"
+   },
+   "Espresso": {
+    "code": "#87634a",
+    "img": "https://files.cdn.printful.com/products/586/21243_1787742611.jpg"
+   },
+   "Flo Blue": {
+    "code": "#5669be",
+    "img": "https://files.cdn.printful.com/products/586/15171_1787742611.jpg"
+   },
+   "Granite": {
+    "code": "#a6abaa",
+    "img": "https://files.cdn.printful.com/products/586/17655_1787742612.jpg"
+   },
+   "Grape": {
+    "code": "#644E6D",
+    "img": "https://files.cdn.printful.com/products/586/22096_1787742611.jpg"
+   },
+   "Graphite": {
+    "code": "#3e3737",
+    "img": "https://files.cdn.printful.com/products/586/21264_1787742611.jpg"
+   },
+   "Grey": {
+    "code": "#92928f",
+    "img": "https://files.cdn.printful.com/products/586/15176_1787742612.jpg"
+   },
+   "Hemp": {
+    "code": "#4F5232",
+    "img": "https://files.cdn.printful.com/products/586/22103_1787742612.jpg"
+   },
+   "Ice Blue": {
+    "code": "#7a9096",
+    "img": "https://files.cdn.printful.com/products/586/16517_1787742613.jpg"
+   },
+   "Island Reef": {
+    "code": "#b8ffca",
+    "img": "https://files.cdn.printful.com/products/586/21527_1787742612.jpg"
+   },
+   "Ivory": {
+    "code": "#fff4d9",
+    "img": "https://files.cdn.printful.com/products/586/16523_1787742612.jpg"
+   },
+   "Khaki": {
+    "code": "#b3ab8b",
+    "img": "https://files.cdn.printful.com/products/586/21534_1787742612.jpg"
+   },
+   "Lagoon Blue": {
+    "code": "#92dedb",
+    "img": "https://files.cdn.printful.com/products/586/17679_1787742613.jpg"
+   },
+   "Light Green": {
+    "code": "#608267",
+    "img": "https://files.cdn.printful.com/products/586/16535_1787742613.jpg"
+   },
+   "Midnight": {
+    "code": "#3a4e63",
+    "img": "https://files.cdn.printful.com/products/586/21541_1787742613.jpg"
+   },
+   "Moss": {
+    "code": "#6b7053",
+    "img": "https://files.cdn.printful.com/products/586/17700_1787742614.jpg"
+   },
+   "Mustard": {
+    "code": "#ffbc5a",
+    "img": "https://files.cdn.printful.com/products/586/21548_1787742613.jpg"
+   },
+   "Mystic Blue": {
+    "code": "#5068AB",
+    "img": "https://files.cdn.printful.com/products/586/22076_1787742613.jpg"
+   },
+   "Navy": {
+    "code": "#424150",
+    "img": "https://files.cdn.printful.com/products/586/21555_1787742613.jpg"
+   },
+   "Orchid": {
+    "code": "#ead3f2",
+    "img": "https://files.cdn.printful.com/products/586/21257_1787742613.jpg"
+   },
+   "Paprika": {
+    "code": "#fe4747",
+    "img": "https://files.cdn.printful.com/products/586/17669_1787742613.jpg"
+   },
+   "Pepper": {
+    "code": "#514f4c",
+    "img": "https://files.cdn.printful.com/products/586/17693_1787742613.jpg"
+   },
+   "Red": {
+    "code": "#bb1035",
+    "img": "https://files.cdn.printful.com/products/586/15119_1787742613.jpg"
+   },
+   "Sage": {
+    "code": "#49482e",
+    "img": "https://files.cdn.printful.com/products/586/21562_1787742614.jpg"
+   },
+   "Seafoam": {
+    "code": "#69a999",
+    "img": "https://files.cdn.printful.com/products/586/16529_1787742614.jpg"
+   },
+   "Terracotta": {
+    "code": "#ff9364",
+    "img": "https://files.cdn.printful.com/products/586/17662_1787742614.jpg"
+   },
+   "True Navy": {
+    "code": "#1e2c4a",
+    "img": "https://files.cdn.printful.com/products/586/15181_1787742614.jpg"
+   },
+   "Violet": {
+    "code": "#9a8ad2",
+    "img": "https://files.cdn.printful.com/products/586/15186_1787742614.jpg"
+   },
+   "Washed Denim": {
+    "code": "#98aed1",
+    "img": "https://files.cdn.printful.com/products/586/21506_1787742614.jpg"
+   },
+   "Watermelon": {
+    "code": "#d15c68",
+    "img": "https://files.cdn.printful.com/products/586/15191_1787742614.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/586/15124_1787742614.jpg"
+   },
+   "Yam": {
+    "code": "#db642f",
+    "img": "https://files.cdn.printful.com/products/586/21271_1787742614.jpg"
+   }
+  }
+ },
+ "360": {
+  "title": "Women's Relaxed T-Shirt | Bella + Canvas 6400",
+  "type": "Bella + Canvas 6400 | Women's Relaxed Jersey S/S Tee",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#b7b7b7",
+    "img": "https://files.cdn.printful.com/products/360/10176_1774363083.jpg"
+   },
+   "Black": {
+    "code": "#171717",
+    "img": "https://files.cdn.printful.com/products/360/10187_1774363082.jpg"
+   },
+   "Dark Grey Heather": {
+    "code": "#323232",
+    "img": "https://files.cdn.printful.com/products/360/10193_1774363082.jpg"
+   },
+   "Heather Blue Lagoon": {
+    "code": "#8eb9bd",
+    "img": "https://files.cdn.printful.com/products/360/14258_1774363083.jpg"
+   },
+   "Heather Mauve": {
+    "code": "#b97b7e",
+    "img": "https://files.cdn.printful.com/products/360/10205_1774363083.jpg"
+   },
+   "Heather Red": {
+    "code": "#f5575c",
+    "img": "https://files.cdn.printful.com/products/360/14268_1774363083.jpg"
+   },
+   "Heather Stone": {
+    "code": "#c6b7a7",
+    "img": "https://files.cdn.printful.com/products/360/14273_1774363083.jpg"
+   },
+   "Leaf": {
+    "code": "#84a357",
+    "img": "https://files.cdn.printful.com/products/360/10225_1774363083.jpg"
+   },
+   "Navy": {
+    "code": "#161324",
+    "img": "https://files.cdn.printful.com/products/360/10235_1774363084.jpg"
+   },
+   "Pink": {
+    "code": "#fec4ce",
+    "img": "https://files.cdn.printful.com/products/360/10241_1774363084.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/360/10252_1774363084.jpg"
+   },
+   "Forest Green": {
+    "code": "#243f2f",
+    "img": "https://files.cdn.printful.com/products/360/46520_1774363083.jpg"
+   },
+   "Light Violet": {
+    "code": "#e1c4cf",
+    "img": "https://files.cdn.printful.com/products/360/46538_1774363083.jpg"
+   },
+   "Maroon": {
+    "code": "#5f192a",
+    "img": "https://files.cdn.printful.com/products/360/10230_1774363083.jpg"
+   },
+   "Mauve": {
+    "code": "#ba756c",
+    "img": "https://files.cdn.printful.com/products/360/46507_1774363083.jpg"
+   },
+   "Military Green": {
+    "code": "#68664d",
+    "img": "https://files.cdn.printful.com/products/360/46532_1774363083.jpg"
+   },
+   "Natural": {
+    "code": "#fff7e9",
+    "img": "https://files.cdn.printful.com/products/360/46501_1774363084.jpg"
+   },
+   "Sage": {
+    "code": "#aab89a",
+    "img": "https://files.cdn.printful.com/products/360/46526_1774363084.jpg"
+   },
+   "Vintage White": {
+    "code": "#fdfcf3",
+    "img": "https://files.cdn.printful.com/products/360/46513_1774363084.jpg"
+   },
+   "Heather Deep Teal": {
+    "code": "#4a7486",
+    "img": "https://files.cdn.printful.com/products/360/46550_1774363085.jpg"
+   },
+   "Heather Navy": {
+    "code": "#545361",
+    "img": "https://files.cdn.printful.com/products/360/46544_1774363085.jpg"
+   },
+   "Heather True Royal": {
+    "code": "#6a72cc",
+    "img": "https://files.cdn.printful.com/products/360/46556_1774363085.jpg"
+   }
+  }
+ },
+ "1592": {
+  "title": "Unisex Oversized Boxy Tee | Bella+Canvas 3010",
+  "type": "Unisex Oversized Boxy Tee | Bella+Canvas 3010",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#C7C7C5",
+    "img": "https://files.cdn.printful.com/products/1592/50125_1780654212.jpg"
+   },
+   "Black": {
+    "code": "#000000",
+    "img": "https://files.cdn.printful.com/products/1592/50117_1780654211.jpg"
+   },
+   "Dark Grey": {
+    "code": "#2A2930",
+    "img": "https://files.cdn.printful.com/products/1592/50123_1780654211.jpg"
+   },
+   "Forest": {
+    "code": "#20362f",
+    "img": "https://files.cdn.printful.com/products/1592/50111_1780654211.jpg"
+   },
+   "Natural": {
+    "code": "#FFF8EA",
+    "img": "https://files.cdn.printful.com/products/1592/50129_1780654211.jpg"
+   },
+   "Navy": {
+    "code": "#1A1F35",
+    "img": "https://files.cdn.printful.com/products/1592/50128_1780654211.jpg"
+   },
+   "Soft Pink": {
+    "code": "#FFEAE5",
+    "img": "https://files.cdn.printful.com/products/1592/50113_1780654211.jpg"
+   },
+   "Toast": {
+    "code": "#ca8447",
+    "img": "https://files.cdn.printful.com/products/1592/50100_1780654212.jpg"
+   },
+   "White": {
+    "code": "#FFFFFF",
+    "img": "https://files.cdn.printful.com/products/1592/50077_1780654212.jpg"
+   }
+  }
+ },
+ "162": {
+  "title": "Unisex Tri-Blend T-Shirt | Bella + Canvas 3413",
+  "type": "Bella + Canvas 3413 | Unisex Triblend S/S Tee",
+  "colors": {
+   "Mustard Triblend": {
+    "code": "#e3ac56",
+    "img": "https://files.cdn.printful.com/products/162/16728_1788856798.jpg"
+   },
+   "Olive Triblend": {
+    "code": "#9c8861",
+    "img": "https://files.cdn.printful.com/products/162/17374_1788856800.jpg"
+   },
+   "Solid White Triblend": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/162/16792_1788856798.jpg"
+   },
+   "Tan Triblend": {
+    "code": "#cdb9a6",
+    "img": "https://files.cdn.printful.com/products/162/16721_1788856799.jpg"
+   },
+   "Aqua Triblend": {
+    "code": "#33869f",
+    "img": "https://files.cdn.printful.com/products/162/6464_1788856799.jpg"
+   },
+   "Athletic Grey Triblend": {
+    "code": "#a49895",
+    "img": "https://files.cdn.printful.com/products/162/6472_1788856798.jpg"
+   },
+   "Berry Triblend": {
+    "code": "#bc437c",
+    "img": "https://files.cdn.printful.com/products/162/6480_1788856798.jpg"
+   },
+   "Blue Triblend": {
+    "code": "#62749b",
+    "img": "https://files.cdn.printful.com/products/162/6488_1788856799.jpg"
+   },
+   "Brown Triblend": {
+    "code": "#563e32",
+    "img": "https://files.cdn.printful.com/products/162/6496_1788856800.jpg"
+   },
+   "Charcoal-Black Triblend": {
+    "code": "#171b19",
+    "img": "https://files.cdn.printful.com/products/162/6504_1788856800.jpg"
+   },
+   "Clay Triblend": {
+    "code": "#9a5344",
+    "img": "https://files.cdn.printful.com/products/162/6512_1788856800.jpg"
+   },
+   "Emerald Triblend": {
+    "code": "#142c1e",
+    "img": "https://files.cdn.printful.com/products/162/6520_1788856799.jpg"
+   },
+   "Grey Triblend": {
+    "code": "#84817f",
+    "img": "https://files.cdn.printful.com/products/162/6536_1788856800.jpg"
+   },
+   "Maroon Triblend": {
+    "code": "#744e5a",
+    "img": "https://files.cdn.printful.com/products/162/6544_1788856800.jpg"
+   },
+   "Mauve Triblend": {
+    "code": "#cd8071",
+    "img": "https://files.cdn.printful.com/products/162/9761_1788856799.jpg"
+   },
+   "Navy Triblend": {
+    "code": "#464d7e",
+    "img": "https://files.cdn.printful.com/products/162/6552_1788856800.jpg"
+   },
+   "Oatmeal Triblend": {
+    "code": "#e8decd",
+    "img": "https://files.cdn.printful.com/products/162/6821_1788856801.jpg"
+   },
+   "Purple Triblend": {
+    "code": "#846394",
+    "img": "https://files.cdn.printful.com/products/162/6568_1788856798.jpg"
+   },
+   "Red Triblend": {
+    "code": "#da5154",
+    "img": "https://files.cdn.printful.com/products/162/6576_1788856800.jpg"
+   },
+   "Solid Black Triblend": {
+    "code": "#101211",
+    "img": "https://files.cdn.printful.com/products/162/6584_1788856800.jpg"
+   },
+   "Teal Triblend": {
+    "code": "#156560",
+    "img": "https://files.cdn.printful.com/products/162/6592_1788856800.jpg"
+   },
+   "True Royal Triblend": {
+    "code": "#2e4c86",
+    "img": "https://files.cdn.printful.com/products/162/6600_1788856800.jpg"
+   },
+   "White Fleck Triblend": {
+    "code": "#eaeaea",
+    "img": "https://files.cdn.printful.com/products/162/6608_1788856801.jpg"
+   }
+  }
+ },
+ "307": {
+  "title": "Youth Staple Tee | Bella + Canvas 3001Y",
+  "type": "Bella + Canvas 3001Y | Youth Jersey Short Sleeve Tee",
+  "colors": {
+   "Berry": {
+    "code": "#c02773",
+    "img": "https://files.cdn.printful.com/products/307/11211_1581517542.jpg"
+   },
+   "Dark Grey Heather": {
+    "code": "#3e3c3d",
+    "img": "https://files.cdn.printful.com/products/307/11219_1581517585.jpg"
+   },
+   "Forest": {
+    "code": "#1C3727",
+    "img": "https://files.cdn.printful.com/products/307/17602_1695108315.jpg"
+   },
+   "Heather Dust": {
+    "code": "#e5d9c9",
+    "img": "https://files.cdn.printful.com/products/307/17606_1695108336.jpg"
+   },
+   "Maroon": {
+    "code": "#581227",
+    "img": "https://files.cdn.printful.com/products/307/17610_1695108358.jpg"
+   },
+   "Mustard": {
+    "code": "#E6A133",
+    "img": "https://files.cdn.printful.com/products/307/17614_1695108386.jpg"
+   },
+   "True Royal": {
+    "code": "#05499b",
+    "img": "https://files.cdn.printful.com/products/307/11223_1581517669.jpg"
+   },
+   "Athletic Heather": {
+    "code": "#AAA1A2",
+    "img": "https://files.cdn.printful.com/products/307/9600_1581517861.jpg"
+   },
+   "Black": {
+    "code": "#131313",
+    "img": "https://files.cdn.printful.com/products/307/9432_1581517902.jpg"
+   },
+   "Heather Columbia Blue": {
+    "code": "#6495ff",
+    "img": "https://files.cdn.printful.com/products/307/10622_1581517939.jpg"
+   },
+   "Heather Forest": {
+    "code": "#4F5549",
+    "img": "https://files.cdn.printful.com/products/307/9601_1581517986.jpg"
+   },
+   "Kelly": {
+    "code": "#0e7b4e",
+    "img": "https://files.cdn.printful.com/products/307/10630_1581518020.jpg"
+   },
+   "Natural": {
+    "code": "#fff0d1",
+    "img": "https://files.cdn.printful.com/products/307/22321_1738935765.jpg"
+   },
+   "Navy": {
+    "code": "#0d1529",
+    "img": "https://files.cdn.printful.com/products/307/9602_1581518073.jpg"
+   },
+   "Pink": {
+    "code": "#ffcccf",
+    "img": "https://files.cdn.printful.com/products/307/10616_1738935713.jpg"
+   },
+   "Red": {
+    "code": "#d0071e",
+    "img": "https://files.cdn.printful.com/products/307/10634_1581518147.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/307/9428_1581518184.jpg"
+   }
+  }
+ },
+ "356": {
+  "title": "Unisex Long Sleeve Tee | Bella + Canvas 3501",
+  "type": "Bella + Canvas 3501 | Unisex Jersey Long Sleeve Tee",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#b5b4b4",
+    "img": "https://files.cdn.printful.com/products/356/10087_1556619713.jpg"
+   },
+   "Black": {
+    "code": "#131313",
+    "img": "https://files.cdn.printful.com/products/356/10098_1732542285.jpg"
+   },
+   "Black Heather": {
+    "code": "#0e0e0e",
+    "img": "https://files.cdn.printful.com/products/356/12937_1732542304.jpg"
+   },
+   "Dark Grey Heather": {
+    "code": "#3e3c3d",
+    "img": "https://files.cdn.printful.com/products/356/11202_1603780158.jpg"
+   },
+   "Gold": {
+    "code": "#ffa107",
+    "img": "https://files.cdn.printful.com/products/356/14240_1644918503.jpg"
+   },
+   "Heather Deep Teal": {
+    "code": "#335c6b",
+    "img": "https://files.cdn.printful.com/products/356/12949_1627544915.jpg"
+   },
+   "Heather Forest": {
+    "code": "#28332e",
+    "img": "https://files.cdn.printful.com/products/356/16155_1664259901.jpg"
+   },
+   "Heather Mauve": {
+    "code": "#c4736c",
+    "img": "https://files.cdn.printful.com/products/356/11208_1627544939.jpg"
+   },
+   "Heather Navy": {
+    "code": "#44495b",
+    "img": "https://files.cdn.printful.com/products/356/16137_1664259932.jpg"
+   },
+   "Maroon": {
+    "code": "#590a1d",
+    "img": "https://files.cdn.printful.com/products/356/10111_1556619715.jpg"
+   },
+   "Military Green": {
+    "code": "#68664d",
+    "img": "https://files.cdn.printful.com/products/356/10117_1556619712.jpg"
+   },
+   "Navy": {
+    "code": "#161324",
+    "img": "https://files.cdn.printful.com/products/356/10123_1556619717.jpg"
+   },
+   "Red": {
+    "code": "#b9091d",
+    "img": "https://files.cdn.printful.com/products/356/10135_1556619716.jpg"
+   },
+   "Storm": {
+    "code": "#9f9393",
+    "img": "https://files.cdn.printful.com/products/356/14252_1644918544.jpg"
+   },
+   "True Royal": {
+    "code": "#0a4690",
+    "img": "https://files.cdn.printful.com/products/356/16143_1664260000.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/356/10141_1556619718.jpg"
+   }
+  }
+ },
+ "57": {
+  "title": "Unisex Long Sleeve Shirt | Gildan 2400",
+  "type": "Gildan 2400 | Adult Long Sleeve T-Shirt Ultra Cotton",
+  "colors": {
+   "Ash": {
+    "code": "#e9e7e4",
+    "img": "https://files.cdn.printful.com/products/57/3464.jpg"
+   },
+   "Black": {
+    "code": "#080808",
+    "img": "https://files.cdn.printful.com/products/57/3460_1541402548.jpg"
+   },
+   "Forest Green": {
+    "code": "#213b21",
+    "img": "https://files.cdn.printful.com/products/57/3492_1689770787.jpg"
+   },
+   "Indigo Blue": {
+    "code": "#4e6e93",
+    "img": "https://files.cdn.printful.com/products/57/3500_1541402613.jpg"
+   },
+   "Irish Green": {
+    "code": "#00B860",
+    "img": "https://files.cdn.printful.com/products/57/17404_1688021848.jpg"
+   },
+   "Light Blue": {
+    "code": "#9dbfe2",
+    "img": "https://files.cdn.printful.com/products/57/3508_1541402641.jpg"
+   },
+   "Light Pink": {
+    "code": "#f7b4ce",
+    "img": "https://files.cdn.printful.com/products/57/3516_1541402668.jpg"
+   },
+   "Maroon": {
+    "code": "#6c152b",
+    "img": "https://files.cdn.printful.com/products/57/3524_1541402696.jpg"
+   },
+   "Military Green": {
+    "code": "#504e3d",
+    "img": "https://files.cdn.printful.com/products/57/3532_1541402723.jpg"
+   },
+   "Navy": {
+    "code": "#152438",
+    "img": "https://files.cdn.printful.com/products/57/3548_1541402751.jpg"
+   },
+   "Red": {
+    "code": "#e41525",
+    "img": "https://files.cdn.printful.com/products/57/3572_1541402813.jpg"
+   },
+   "Royal": {
+    "code": "#1652ac",
+    "img": "https://files.cdn.printful.com/products/57/3580_1541402841.jpg"
+   },
+   "Sand": {
+    "code": "#d1bfa4",
+    "img": "https://files.cdn.printful.com/products/57/3588_1541402867.jpg"
+   },
+   "Sport Grey": {
+    "code": "#9b969c",
+    "img": "https://files.cdn.printful.com/products/57/3604_1541402518.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/57/3452_1541402896.jpg"
+   }
+  }
+ },
+ "248": {
+  "title": "Unisex Staple Tank Top | Bella + Canvas 3480",
+  "type": "Bella + Canvas 3480 | 3480 Unisex Jersey Tank",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#AAA1A2",
+    "img": "https://files.cdn.printful.com/products/248/8639_1581415321.jpg"
+   },
+   "Black": {
+    "code": "#131212",
+    "img": "https://files.cdn.printful.com/products/248/8633_1581415380.jpg"
+   },
+   "Navy": {
+    "code": "#1a2438",
+    "img": "https://files.cdn.printful.com/products/248/8651_1581415493.jpg"
+   },
+   "Red": {
+    "code": "#c21424",
+    "img": "https://files.cdn.printful.com/products/248/8657_1581415591.jpg"
+   },
+   "True Royal": {
+    "code": "#1645b2",
+    "img": "https://files.cdn.printful.com/products/248/8645_1581415687.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/248/8663_1581415736.jpg"
+   }
+  }
+ },
+ "380": {
+  "title": "Unisex Premium Pullover Hoodie | Cotton Heritage M2580",
+  "type": "Cotton Heritage M2580 | Unisex Premium Pullover Hoodie",
+  "colors": {
+   "Adobe": {
+    "code": "#d06e26",
+    "img": "https://files.cdn.printful.com/products/380/24987_1788773849.jpg"
+   },
+   "Carolina Blue": {
+    "code": "#98b7ee",
+    "img": "https://files.cdn.printful.com/products/380/11496_1788773849.jpg"
+   },
+   "Khaki": {
+    "code": "#d2a26f",
+    "img": "https://files.cdn.printful.com/products/380/13899_1788773849.jpg"
+   },
+   "Latte": {
+    "code": "#b28a68",
+    "img": "https://files.cdn.printful.com/products/380/24981_1788773849.jpg"
+   },
+   "Lavender": {
+    "code": "#ffdcf3",
+    "img": "https://files.cdn.printful.com/products/380/25005_1788773849.jpg"
+   },
+   "Light Pink": {
+    "code": "#ffd0cc",
+    "img": "https://files.cdn.printful.com/products/380/24993_1788773849.jpg"
+   },
+   "Oatmeal Heather": {
+    "code": "#fbf2e1",
+    "img": "https://files.cdn.printful.com/products/380/24975_1788773849.jpg"
+   },
+   "Team Gold": {
+    "code": "#ffa912",
+    "img": "https://files.cdn.printful.com/products/380/24999_1788773849.jpg"
+   },
+   "Black": {
+    "code": "#080808",
+    "img": "https://files.cdn.printful.com/products/380/10779_1788773849.jpg"
+   },
+   "Bone": {
+    "code": "#f5e8ce",
+    "img": "https://files.cdn.printful.com/products/380/20284_1788773849.jpg"
+   },
+   "Carbon Grey": {
+    "code": "#c7c3be",
+    "img": "https://files.cdn.printful.com/products/380/10784_1788773849.jpg"
+   },
+   "Charcoal Heather": {
+    "code": "#463e3d",
+    "img": "https://files.cdn.printful.com/products/380/11481_1788773849.jpg"
+   },
+   "Dusty Rose": {
+    "code": "#d27e6f",
+    "img": "https://files.cdn.printful.com/products/380/13887_1788773849.jpg"
+   },
+   "Forest Green": {
+    "code": "#335231",
+    "img": "https://files.cdn.printful.com/products/380/16162_1788773849.jpg"
+   },
+   "Maroon": {
+    "code": "#7d263a",
+    "img": "https://files.cdn.printful.com/products/380/11486_1788773849.jpg"
+   },
+   "Military Green": {
+    "code": "#5c4f32",
+    "img": "https://files.cdn.printful.com/products/380/13893_1788773849.jpg"
+   },
+   "Navy Blazer": {
+    "code": "#171f2c",
+    "img": "https://files.cdn.printful.com/products/380/11491_1788773849.jpg"
+   },
+   "Purple": {
+    "code": "#623a7a",
+    "img": "https://files.cdn.printful.com/products/380/13911_1788773849.jpg"
+   },
+   "Sky Blue": {
+    "code": "#d6edf7",
+    "img": "https://files.cdn.printful.com/products/380/13917_1788773849.jpg"
+   },
+   "Team Red": {
+    "code": "#FF2D41",
+    "img": "https://files.cdn.printful.com/products/380/20278_1788773849.jpg"
+   },
+   "Team Royal": {
+    "code": "#1b43ae",
+    "img": "https://files.cdn.printful.com/products/380/13905_1788773849.jpg"
+   },
+   "Vintage Black": {
+    "code": "#43413D",
+    "img": "https://files.cdn.printful.com/products/380/20272_1788773849.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/380/10774_1788773849.jpg"
+   }
+  }
+ },
+ "146": {
+  "title": "Unisex Heavy Blend Hoodie | Gildan 18500",
+  "type": "Gildan 18500 | Adult Hooded Sweat Heavy Blend",
+  "colors": {
+   "Ash": {
+    "code": "#dedede",
+    "img": "https://files.cdn.printful.com/products/146/20544_1750160842.jpg"
+   },
+   "Black": {
+    "code": "#0b0b0b",
+    "img": "https://files.cdn.printful.com/products/146/5530_1750160839.jpg"
+   },
+   "Carolina Blue": {
+    "code": "#8DB7F6",
+    "img": "https://files.cdn.printful.com/products/146/21635_1750160840.jpg"
+   },
+   "Charcoal": {
+    "code": "#534E4A",
+    "img": "https://files.cdn.printful.com/products/146/16859_1750160841.jpg"
+   },
+   "Dark Chocolate": {
+    "code": "#35241b",
+    "img": "https://files.cdn.printful.com/products/146/5554_1750160841.jpg"
+   },
+   "Dark Heather": {
+    "code": "#47484d",
+    "img": "https://files.cdn.printful.com/products/146/10806_1750160842.jpg"
+   },
+   "Forest Green": {
+    "code": "#222E1F",
+    "img": "https://files.cdn.printful.com/products/146/20570_1750160841.jpg"
+   },
+   "Gold": {
+    "code": "#FFAF24",
+    "img": "https://files.cdn.printful.com/products/146/22118_1750160843.jpg"
+   },
+   "Graphite Heather": {
+    "code": "#686868",
+    "img": "https://files.cdn.printful.com/products/146/20546_1750160841.jpg"
+   },
+   "Heather Sport Dark Navy": {
+    "code": "#515A6E",
+    "img": "https://files.cdn.printful.com/products/146/17406_1750160842.jpg"
+   },
+   "Heliconia": {
+    "code": "#F63880",
+    "img": "https://files.cdn.printful.com/products/146/22257_1750160842.jpg"
+   },
+   "Indigo Blue": {
+    "code": "#395d82",
+    "img": "https://files.cdn.printful.com/products/146/5562_1750160841.jpg"
+   },
+   "Irish Green": {
+    "code": "#1d9345",
+    "img": "https://files.cdn.printful.com/products/146/5546_1750160841.jpg"
+   },
+   "Light Blue": {
+    "code": "#a1c5e1",
+    "img": "https://files.cdn.printful.com/products/146/10841_1750160841.jpg"
+   },
+   "Light Pink": {
+    "code": "#f3d4e3",
+    "img": "https://files.cdn.printful.com/products/146/10849_1750160843.jpg"
+   },
+   "Maroon": {
+    "code": "#47171c",
+    "img": "https://files.cdn.printful.com/products/146/5586_1750160840.jpg"
+   },
+   "Military Green": {
+    "code": "#7e8560",
+    "img": "https://files.cdn.printful.com/products/146/12989_1750160840.jpg"
+   },
+   "Navy": {
+    "code": "#131928",
+    "img": "https://files.cdn.printful.com/products/146/5594_1750160841.jpg"
+   },
+   "Orange": {
+    "code": "#FF5723",
+    "img": "https://files.cdn.printful.com/products/146/22265_1750160843.jpg"
+   },
+   "Purple": {
+    "code": "#4A1C7D",
+    "img": "https://files.cdn.printful.com/products/146/21627_1750160842.jpg"
+   },
+   "Red": {
+    "code": "#da0a1a",
+    "img": "https://files.cdn.printful.com/products/146/5538_1750160842.jpg"
+   },
+   "Royal": {
+    "code": "#1D50A4",
+    "img": "https://files.cdn.printful.com/products/146/16850_1750160840.jpg"
+   },
+   "Sand": {
+    "code": "#e7d3b3",
+    "img": "https://files.cdn.printful.com/products/146/12997_1750160840.jpg"
+   },
+   "Sport Grey": {
+    "code": "#9b969c",
+    "img": "https://files.cdn.printful.com/products/146/5610_1750160841.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/146/5522_1750160842.jpg"
+   },
+   "Azalea": {
+    "code": "#ff9faf",
+    "img": "https://files.cdn.printful.com/products/146/23489_1750160840.jpg"
+   }
+  }
+ },
+ "294": {
+  "title": "Unisex Pullover Hoodie | Bella + Canvas 3719",
+  "type": "Bella + Canvas 3719 | Unisex Fleece Pullover Hoodie",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#bdbdbb",
+    "img": "https://files.cdn.printful.com/products/294/9236_1769517742.jpg"
+   },
+   "Black": {
+    "code": "#0c0c0c",
+    "img": "https://files.cdn.printful.com/products/294/9228_1769517742.jpg"
+   },
+   "Forest": {
+    "code": "#1b3720",
+    "img": "https://files.cdn.printful.com/products/294/34411_1769517742.jpg"
+   },
+   "Heather Forest": {
+    "code": "#3f4a48",
+    "img": "https://files.cdn.printful.com/products/294/9244_1769517742.jpg"
+   },
+   "Heather Navy": {
+    "code": "#2e3342",
+    "img": "https://files.cdn.printful.com/products/294/9253_1769517742.jpg"
+   },
+   "Lilac": {
+    "code": "#fabbd8",
+    "img": "https://files.cdn.printful.com/products/294/34423_1769517742.jpg"
+   },
+   "Maroon": {
+    "code": "#641524",
+    "img": "https://files.cdn.printful.com/products/294/34417_1769517742.jpg"
+   },
+   "Team Purple": {
+    "code": "#5e2570",
+    "img": "https://files.cdn.printful.com/products/294/34412_1769517742.jpg"
+   },
+   "True Royal": {
+    "code": "#2e4db0",
+    "img": "https://files.cdn.printful.com/products/294/34402_1769517742.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/294/9220_1769517742.jpg"
+   },
+   "Black Heather": {
+    "code": "#121212",
+    "img": "https://files.cdn.printful.com/products/294/51462_1782885827.jpg"
+   }
+  }
+ },
+ "892": {
+  "title": "Unisex Oversized Heavyweight Hoodie | Bella + Canvas 4719",
+  "type": "Bella + Canvas 4719 | Unisex 10 oz Heavyweight Pullover Hoodie",
+  "colors": {
+   "Sage": {
+    "code": "#9caf92",
+    "img": "https://files.cdn.printful.com/products/892/53818_1790583483.jpg"
+   },
+   "True Royal": {
+    "code": "#2353c4",
+    "img": "https://files.cdn.printful.com/products/892/53802_1790583483.jpg"
+   },
+   "Vintage Heather Grey": {
+    "code": "#fff6e3",
+    "img": "https://files.cdn.printful.com/products/892/53825_1790583484.jpg"
+   },
+   "Asphalt": {
+    "code": "#716b63",
+    "img": "https://files.cdn.printful.com/products/892/22952_1790583485.jpg"
+   },
+   "Athletic Heather": {
+    "code": "#f2f2f2",
+    "img": "https://files.cdn.printful.com/products/892/22957_1790583485.jpg"
+   },
+   "Black": {
+    "code": "#0e0b0b",
+    "img": "https://files.cdn.printful.com/products/892/22964_1790583483.jpg"
+   },
+   "Dust": {
+    "code": "#f4e7d6",
+    "img": "https://files.cdn.printful.com/products/892/22969_1790583484.jpg"
+   },
+   "Forest": {
+    "code": "#233c27",
+    "img": "https://files.cdn.printful.com/products/892/22978_1790583484.jpg"
+   },
+   "Maroon": {
+    "code": "#621926",
+    "img": "https://files.cdn.printful.com/products/892/22981_1790583483.jpg"
+   },
+   "Navy": {
+    "code": "#24283c",
+    "img": "https://files.cdn.printful.com/products/892/22989_1790583484.jpg"
+   },
+   "Vintage Black": {
+    "code": "#161816",
+    "img": "https://files.cdn.printful.com/products/892/22993_1790583483.jpg"
+   },
+   "Vintage Brown": {
+    "code": "#9e7551",
+    "img": "https://files.cdn.printful.com/products/892/23003_1790583484.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/892/23005_1790583484.jpg"
+   }
+  }
+ },
+ "734": {
+  "title": "Unisex Relax Hoodie | AS Colour 5161",
+  "type": "AS Colour 5161 | Relax Hood",
+  "colors": {
+   "Bone": {
+    "code": "#fcf0e1",
+    "img": "https://files.cdn.printful.com/products/734/25475_1759727675.jpg"
+   },
+   "Athletic Heather": {
+    "code": "#dddde7",
+    "img": "https://files.cdn.printful.com/products/734/18812_1759727675.jpg"
+   },
+   "Black": {
+    "code": "#060606",
+    "img": "https://files.cdn.printful.com/products/734/19198_1759727675.jpg"
+   },
+   "Carolina Blue": {
+    "code": "#a1c2d9",
+    "img": "https://files.cdn.printful.com/products/734/25482_1759727675.jpg"
+   },
+   "Chestnut": {
+    "code": "#814733",
+    "img": "https://files.cdn.printful.com/products/734/25525_1759727675.jpg"
+   },
+   "Clay": {
+    "code": "#a14821",
+    "img": "https://files.cdn.printful.com/products/734/25507_1759727675.jpg"
+   },
+   "Cobalt": {
+    "code": "#30478a",
+    "img": "https://files.cdn.printful.com/products/734/19201_1759727675.jpg"
+   },
+   "Cypress": {
+    "code": "#6b6d4f",
+    "img": "https://files.cdn.printful.com/products/734/25501_1759727675.jpg"
+   },
+   "Pine Green": {
+    "code": "#113433",
+    "img": "https://files.cdn.printful.com/products/734/19207_1759727675.jpg"
+   },
+   "Sand": {
+    "code": "#B3A078",
+    "img": "https://files.cdn.printful.com/products/734/25513_1787724339.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/734/25335_1759727675.jpg"
+   },
+   "White Heather": {
+    "code": "#f0f0f0",
+    "img": "https://files.cdn.printful.com/products/734/25436_1759727675.jpg"
+   }
+  }
+ },
+ "1412": {
+  "title": "Women's Relax Hoodie | AS Colour 4161",
+  "type": "AS Colour 4161 I Wo's Relax Hood",
+  "colors": {
+   "Athletic Heather": {
+    "code": "#c0c0c0",
+    "img": "https://files.cdn.printful.com/products/1412/32027_1761046041.jpg"
+   },
+   "Black": {
+    "code": "#060606",
+    "img": "https://files.cdn.printful.com/products/1412/32008_1761046040.jpg"
+   },
+   "Charity Pink": {
+    "code": "#fa6f9d",
+    "img": "https://files.cdn.printful.com/products/1412/32050_1761046040.jpg"
+   },
+   "Hazy Pink": {
+    "code": "#bd968a",
+    "img": "https://files.cdn.printful.com/products/1412/32032_1761046040.jpg"
+   },
+   "Orchid": {
+    "code": "#fdeaed",
+    "img": "https://files.cdn.printful.com/products/1412/32024_1761046040.jpg"
+   }
+  }
+ },
+ "145": {
+  "title": "Unisex Crew Neck Sweatshirt | Gildan 18000",
+  "type": "Gildan 18000 | Adult Crewneck Heavy Blend",
+  "colors": {
+   "Ash": {
+    "code": "#ededed",
+    "img": "https://files.cdn.printful.com/products/145/18755_1790329248.jpg"
+   },
+   "Black": {
+    "code": "#0b0b0b",
+    "img": "https://files.cdn.printful.com/products/145/5434_1790329248.jpg"
+   },
+   "Carolina Blue": {
+    "code": "#8DB7F6",
+    "img": "https://files.cdn.printful.com/products/145/20594_1790329249.jpg"
+   },
+   "Charcoal": {
+    "code": "#534E4A",
+    "img": "https://files.cdn.printful.com/products/145/16882_1790329249.jpg"
+   },
+   "Dark Chocolate": {
+    "code": "#35241b",
+    "img": "https://files.cdn.printful.com/products/145/5458_1790329249.jpg"
+   },
+   "Dark Heather": {
+    "code": "#46484d",
+    "img": "https://files.cdn.printful.com/products/145/10833_1790329251.jpg"
+   },
+   "Forest Green": {
+    "code": "#1A3626",
+    "img": "https://files.cdn.printful.com/products/145/18763_1790329249.jpg"
+   },
+   "Gold": {
+    "code": "#FFAF24",
+    "img": "https://files.cdn.printful.com/products/145/20578_1790329249.jpg"
+   },
+   "Graphite Heather": {
+    "code": "#686868",
+    "img": "https://files.cdn.printful.com/products/145/22642_1790329250.jpg"
+   },
+   "Heather Deep Royal": {
+    "code": "#6898f2",
+    "img": "https://files.cdn.printful.com/products/145/23657_1790329251.jpg"
+   },
+   "Heliconia": {
+    "code": "#F63880",
+    "img": "https://files.cdn.printful.com/products/145/20586_1790329251.jpg"
+   },
+   "Indigo Blue": {
+    "code": "#395d82",
+    "img": "https://files.cdn.printful.com/products/145/5466_1790329251.jpg"
+   },
+   "Irish Green": {
+    "code": "#00B365",
+    "img": "https://files.cdn.printful.com/products/145/5450_1790329252.jpg"
+   },
+   "Light Blue": {
+    "code": "#a1c5e1",
+    "img": "https://files.cdn.printful.com/products/145/7860_1790329252.jpg"
+   },
+   "Light Pink": {
+    "code": "#f3d4e3",
+    "img": "https://files.cdn.printful.com/products/145/7868_1790329252.jpg"
+   },
+   "Maroon": {
+    "code": "#651d32",
+    "img": "https://files.cdn.printful.com/products/145/5490_1790329252.jpg"
+   },
+   "Military Green": {
+    "code": "#7e8560",
+    "img": "https://files.cdn.printful.com/products/145/13005_1790329252.jpg"
+   },
+   "Navy": {
+    "code": "#050c1d",
+    "img": "https://files.cdn.printful.com/products/145/5498_1790329252.jpg"
+   },
+   "Orange": {
+    "code": "#ff5723",
+    "img": "https://files.cdn.printful.com/products/145/22650_1790329252.jpg"
+   },
+   "Purple": {
+    "code": "#4A1C7D",
+    "img": "https://files.cdn.printful.com/products/145/20602_1790329252.jpg"
+   },
+   "Red": {
+    "code": "#da0a1a",
+    "img": "https://files.cdn.printful.com/products/145/5442_1790329252.jpg"
+   },
+   "Royal": {
+    "code": "#1D50A4",
+    "img": "https://files.cdn.printful.com/products/145/16870_1790329252.jpg"
+   },
+   "Sand": {
+    "code": "#e7d3b3",
+    "img": "https://files.cdn.printful.com/products/145/16876_1790329252.jpg"
+   },
+   "Sport Grey": {
+    "code": "#ccccce",
+    "img": "https://files.cdn.printful.com/products/145/5514_1790329252.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/145/5426_1790329252.jpg"
+   }
+  }
+ },
+ "411": {
+  "title": "Unisex Premium Sweatshirt | Cotton Heritage M2480",
+  "type": "Cotton Heritage M2480 | Unisex Premium Crew Neck",
+  "colors": {
+   "Adobe": {
+    "code": "#d06e26",
+    "img": "https://files.cdn.printful.com/products/411/25532_1759916597.jpg"
+   },
+   "Agave": {
+    "code": "#c0d7d2",
+    "img": "https://files.cdn.printful.com/products/411/13950_1759916597.jpg"
+   },
+   "Black": {
+    "code": "#101010",
+    "img": "https://files.cdn.printful.com/products/411/11254_1759916599.jpg"
+   },
+   "Bone": {
+    "code": "#f5e8ce",
+    "img": "https://files.cdn.printful.com/products/411/20352_1759916599.jpg"
+   },
+   "Carbon Grey": {
+    "code": "#b2afaa",
+    "img": "https://files.cdn.printful.com/products/411/11244_1759916601.jpg"
+   },
+   "Cardinal": {
+    "code": "#9E1510",
+    "img": "https://files.cdn.printful.com/products/411/13875_1759916599.jpg"
+   },
+   "Charcoal Heather": {
+    "code": "#3a3a38",
+    "img": "https://files.cdn.printful.com/products/411/11259_1759916599.jpg"
+   },
+   "Dusty Rose": {
+    "code": "#f59382",
+    "img": "https://files.cdn.printful.com/products/411/13863_1759916600.jpg"
+   },
+   "Forest Green": {
+    "code": "#335231",
+    "img": "https://files.cdn.printful.com/products/411/16156_1759916600.jpg"
+   },
+   "Khaki": {
+    "code": "#d2a26f",
+    "img": "https://files.cdn.printful.com/products/411/25556_1759916600.jpg"
+   },
+   "Latte": {
+    "code": "#b28a68",
+    "img": "https://files.cdn.printful.com/products/411/25526_1759916599.jpg"
+   },
+   "Lavender": {
+    "code": "#ffdcf3",
+    "img": "https://files.cdn.printful.com/products/411/25550_1760104258.jpg"
+   },
+   "Light Pink": {
+    "code": "#ffd0cc",
+    "img": "https://files.cdn.printful.com/products/411/25544_1760104231.jpg"
+   },
+   "Navy Blazer": {
+    "code": "#171f2c",
+    "img": "https://files.cdn.printful.com/products/411/13252_1759916600.jpg"
+   },
+   "Sky Blue": {
+    "code": "#ddf7ff",
+    "img": "https://files.cdn.printful.com/products/411/25538_1760104207.jpg"
+   },
+   "Team Red": {
+    "code": "#FF2D41",
+    "img": "https://files.cdn.printful.com/products/411/20364_1759916600.jpg"
+   },
+   "Team Royal": {
+    "code": "#2d407d",
+    "img": "https://files.cdn.printful.com/products/411/13869_1759916599.jpg"
+   },
+   "Vintage Black": {
+    "code": "#43413D",
+    "img": "https://files.cdn.printful.com/products/411/20358_1759916600.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/411/11249_1759916599.jpg"
+   }
+  }
+ },
+ "897": {
+  "title": "Unisex Oversized Heavyweight Sweatshirt | Bella + Canvas 4711",
+  "type": "Bella + Canvas 4711 | Unisex 10 oz Heavyweight Crewneck Sweatshirt",
+  "colors": {
+   "Asphalt": {
+    "code": "#6b6660",
+    "img": "https://files.cdn.printful.com/products/897/53502_1788352549.jpg"
+   },
+   "Forest": {
+    "code": "#293c2c",
+    "img": "https://files.cdn.printful.com/products/897/53503_1788352549.jpg"
+   },
+   "Vintage Brown": {
+    "code": "#9e7551",
+    "img": "https://files.cdn.printful.com/products/897/53504_1788352549.jpg"
+   },
+   "Athletic Heather": {
+    "code": "#f2f2f2",
+    "img": "https://files.cdn.printful.com/products/897/23048_1788352548.jpg"
+   },
+   "Black": {
+    "code": "#0e0b0b",
+    "img": "https://files.cdn.printful.com/products/897/23056_1788352548.jpg"
+   },
+   "Dust": {
+    "code": "#f4e7d6",
+    "img": "https://files.cdn.printful.com/products/897/23064_1788352548.jpg"
+   },
+   "Maroon": {
+    "code": "#621926",
+    "img": "https://files.cdn.printful.com/products/897/23076_1788352549.jpg"
+   },
+   "Navy": {
+    "code": "#24283c",
+    "img": "https://files.cdn.printful.com/products/897/23078_1788352548.jpg"
+   },
+   "Vintage Black": {
+    "code": "#161816",
+    "img": "https://files.cdn.printful.com/products/897/23083_1788352548.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/897/23095_1788352548.jpg"
+   }
+  }
+ },
+ "845": {
+  "title": "Unisex Premium Crew Neck Sweatshirt | Lane Seven LS14004",
+  "type": "Lane Seven LS14004 | Crewneck Sweater",
+  "colors": {
+   "Black": {
+    "code": "#1a1a1a",
+    "img": "https://files.cdn.printful.com/products/845/22127_1773818082.jpg"
+   },
+   "Cardinal": {
+    "code": "#d02c38",
+    "img": "https://files.cdn.printful.com/products/845/46126_1773818082.jpg"
+   },
+   "Heather Grey": {
+    "code": "#cdcdcd",
+    "img": "https://files.cdn.printful.com/products/845/22456_1773818082.jpg"
+   },
+   "Navy": {
+    "code": "#2b3339",
+    "img": "https://files.cdn.printful.com/products/845/22467_1773818082.jpg"
+   },
+   "Oatmeal Heather": {
+    "code": "#f7f2eb",
+    "img": "https://files.cdn.printful.com/products/845/22468_1773818082.jpg"
+   },
+   "Purple": {
+    "code": "#72398c",
+    "img": "https://files.cdn.printful.com/products/845/46148_1773818082.jpg"
+   },
+   "Sandshell": {
+    "code": "#fff6e3",
+    "img": "https://files.cdn.printful.com/products/845/22459_1773818082.jpg"
+   },
+   "Smoke": {
+    "code": "#464341",
+    "img": "https://files.cdn.printful.com/products/845/46141_1773818082.jpg"
+   },
+   "Sports Green": {
+    "code": "#2e4030",
+    "img": "https://files.cdn.printful.com/products/845/46146_1773818082.jpg"
+   },
+   "True Royal": {
+    "code": "#3e69c5",
+    "img": "https://files.cdn.printful.com/products/845/46119_1773818082.jpg"
+   },
+   "White": {
+    "code": "#ffffff",
+    "img": "https://files.cdn.printful.com/products/845/22465_1773818082.jpg"
+   }
+  }
+ }
+}

@@ -1,0 +1,9 @@
+# cache tải về, sinh lại bằng các script fetch_*
+fonts/
+art/full/
+art/thumb/
+art/index.json
+art/sheet_*.jpg
+blanks/*/
+blanks/*.jpg
+__pycache__/

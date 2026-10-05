@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRoute } from "wouter";
 import { useCart } from "@/contexts/CartContext";
-import productData from "@/data/products.json";
+import { allProducts as productData } from "@/data/catalog";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Check, ShoppingCart } from "lucide-react";
 import NotFound from "./NotFound";
