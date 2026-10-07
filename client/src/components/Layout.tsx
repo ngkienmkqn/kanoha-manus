@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useSearch } from "wouter";
-import { isApparelCategory } from "@/data/catalog";
+import { Link, useLocation } from "wouter";
 import { 
   Home as HomeIcon, 
   Globe, 
@@ -12,16 +11,13 @@ import {
   Users,
   Menu,
   X,
-  Phone,
-  Shirt
+  Phone
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const CommandNavigation = () => {
   const [location] = useLocation();
-  const search = useSearch();
   const [activeSection, setActiveSection] = useState("home");
-  const onApparel = location === "/products" && isApparelCategory(new URLSearchParams(search).get("category") || "");
 
   // Only track scroll on home page
   useEffect(() => {
@@ -50,7 +46,6 @@ const CommandNavigation = () => {
   const navItems = [
     { id: "home", label: "Home", icon: HomeIcon, path: "/" },
     { id: "about", label: "About", icon: Globe, path: "/about" },
-    { id: "apparel", label: "Apparel", icon: Shirt, path: "/products?category=Apparel" },
     { id: "products", label: "Products", icon: Package, path: "/products" },
     { id: "services", label: "Services", icon: Anchor, path: "/services" },
     { id: "contact", label: "Contact", icon: MessageSquare, path: "/contact" },
@@ -64,9 +59,7 @@ const CommandNavigation = () => {
       <nav className="fixed right-0 top-0 h-full w-[88px] bg-[#0B1120]/95 backdrop-blur-sm z-50 flex flex-col justify-between py-8 border-l border-white/10 shadow-2xl hidden lg:flex">
         <div className="flex flex-col w-full">
         {navItems.map((item) => {
-          const isActive = item.id === "apparel" ? onApparel
-            : item.id === "products" ? location === "/products" && !onApparel
-            : location === item.path || (location === "/" && activeSection === item.id && item.path.startsWith("/#"));
+          const isActive = location === item.path || (location === "/" && activeSection === item.id && item.path.startsWith("/#"));
           
           return (
             <Link key={item.id} href={item.path}>
@@ -137,9 +130,7 @@ const CommandNavigation = () => {
             
             <div className="flex-1 flex flex-col">
               {navItems.map((item) => {
-                const isActive = item.id === "apparel" ? onApparel
-                  : item.id === "products" ? location === "/products" && !onApparel
-                  : location === item.path;
+                const isActive = location === item.path;
                 return (
                   <Link key={item.id} href={item.path}>
                     <a className={`
