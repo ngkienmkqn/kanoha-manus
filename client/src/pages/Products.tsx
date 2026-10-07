@@ -217,9 +217,11 @@ export default function Products() {
                       <img
                         src={product.img}
                         alt={product.name}
-                        loading="lazy"
-                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                        onError={(e) => { (e.target as HTMLImageElement).src = "/images/products/placeholder.webp"; }}
+                        width={600}
+                        height={600}
+                        decoding="async"
+                        className="w-auto h-auto max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/products/8_woocommerce-placeholder.png"; }}
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <span className="bg-white text-black px-6 py-2 font-bold uppercase tracking-wider text-sm">View Details</span>
@@ -294,7 +296,7 @@ export default function Products() {
                   src={selectedProduct.img}
                   alt={selectedProduct.name}
                   className="max-w-full max-h-[300px] object-contain"
-                  onError={(e) => { (e.target as HTMLImageElement).src = "/images/products/placeholder.webp"; }}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/products/8_woocommerce-placeholder.png"; }}
                 />
               </div>
               <div className="md:w-1/2 p-8 flex flex-col">

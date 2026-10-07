@@ -75,7 +75,7 @@ export default function ProductDetail() {
               src={currentProduct.img}
               alt={currentProduct.name}
               className="max-w-full max-h-[500px] object-contain"
-              onError={(e) => { (e.target as HTMLImageElement).src = "/images/products/placeholder.webp"; }}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/products/8_woocommerce-placeholder.png"; }}
             />
           </div>
 
